@@ -262,6 +262,10 @@ header input:focus {
     margin-right: 20px;
 }
 
+.likes button:nth-child(2) {
+    margin-right: 0;
+}
+
 .likes i {
     margin-right: 7px;
     font-weight: 700;
