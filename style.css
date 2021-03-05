@@ -71,9 +71,9 @@ header input:focus {
 }
 
 #profileIcon {
-    padding-top: 6px;
+    padding-top: 10px;
     max-width: 25px;
-    height: 25px;
+    height: 30px;
 }
 
 #profileIcon img {
@@ -213,28 +213,32 @@ header input:focus {
 .posts {
     width: 60%;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .posts-container {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-}
-
-.posts img {
-    width: 335px;
-    height: 335px;
-    margin-bottom: 20px;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-auto-rows: 340px;
+    grid-gap: 25px;
 }
 
 .postImage {
     position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.posts img {
+    width: 100%;
+    height: 100%;
 }
 
 .likes {
-    /* width: 100%; */
-    height: 335px;
     position: absolute;
     top: 0;
     left: 0;
@@ -253,8 +257,14 @@ header input:focus {
     background: transparent;
     border: none;
     font-size: 1.2rem;
+    font-weight: 500;
     color: white;
-    margin-right: 10px;
+    margin-right: 20px;
+}
+
+.likes i {
+    margin-right: 7px;
+    font-weight: 700;
 }
 
 .postImage:hover {
