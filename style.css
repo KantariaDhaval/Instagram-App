@@ -213,7 +213,7 @@ header input:focus {
 .posts {
     width: 60%;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .posts-container {
@@ -275,4 +275,51 @@ header input:focus {
 .postImage:hover .likes {
     visibility: visible;
     opacity: 1;
+}
+
+
+
+/*********** FOOTER STYLES **********/
+
+.footer-container {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 60px;
+}
+
+#listsOfInfo {
+    list-style: none;
+    
+}
+
+#listsOfInfo li{
+    display: inline-block;
+    margin-left: 20px;
+    
+}
+
+#listOfInfo li:nth-child(1) {
+    margin-left: 0;
+}
+
+.languages {
+    display: flex;
+    margin-top: 20px;
+}
+
+#languages {
+    background-color: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 25px;
+}
+
+#languages:focus {
+    outline: none;
 }
