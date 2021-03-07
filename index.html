@@ -15,39 +15,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h2 id="name">Instagram</h2>
-            <input type="text" id="search" placeholder='&#xF002; Search' style="font-family:FontAwesome, Arial">     
-            <div class="buttons">
-                <ul class="listOfButtons">
-                    <li class="btn">
-                        <button class="icon">
+    <header class="header">
+        <div class="headerContainer">
+            <h2 id="appName">Instagram</h2>
+            <input type="text" id="search" placeholder='&#xF002; Search'>     
+            <div class="pages">
+                <ul class="listOfPages">
+                    <li class="page">
+                        <button class="pageIcon" id="homePage">
                             <i class="fas fa-home"></i>
                         </button>
                     </li>
-                    <li class="btn">
-                        <button class="icon">
+                    <li class="page">
+                        <button class="pageIcon" id="chatPage">
                             <i class="fab fa-facebook-messenger"></i>
                         </button>
                     </li>
-                    <li class="btn">
-                        <button class="icon">
+                    <li class="page">
+                        <button class="pageIcon" id="searchPage">
                             <i class="far fa-compass"></i>
                         </button>
                     </li>
-                    <li class="btn">
-                        <button class="icon">
+                    <li class="page">
+                        <button class="pageIcon" id="likePage">
                             <i class="far fa-heart"></i>
                         </button>
                     </li>
-                    <li class="btn">
-                        <button class="icon" id="profileIcon">
-                            <!-- <i class="fas fa-user-circle"></i> -->
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYB1Oq6j2-N9HyYYqtjEbzYsbFmdtBdg-y1g&usqp=CAU" alt="Profile Photo">
+                    <li class="page">
+                        <button class="pageIcon" id="profilePage">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYB1Oq6j2-N9HyYYqtjEbzYsbFmdtBdg-y1g&usqp=CAU" alt="Profile Photo" id="profilePhotoIcon">
                         </button>
                     </li>
                 </ul>
@@ -56,22 +55,22 @@
     </header>
     
     <div class="profile">
-        <div class="profile-container">
+        <div class="profileContainer">
             <div class="profilePhoto">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYB1Oq6j2-N9HyYYqtjEbzYsbFmdtBdg-y1g&usqp=CAU" alt="Profile Photo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYB1Oq6j2-N9HyYYqtjEbzYsbFmdtBdg-y1g&usqp=CAU" alt="Profile Photo" id="profilePhoto">
             </div>
             <div class="profileData">
                 <div class="handle">
                     <div id="handleName"><h2>Dhaval Kantaria</h2></div>
-                    <button id="editProfile">Edit Profile</button>
-                    <button id="setting"><i class="fas fa-cog"></i></button>
+                    <button id="editProfileBtn">Edit Profile</button>
+                    <button id="settingBtn"><i class="fas fa-cog"></i></button>
                 </div>
                 <div class="accountDetails">
-                    <p><span id="postsNumber">21</span>posts</p>
-                    <p><span id="followers">500</span>followers</p>
-                    <p><span id="following">500</span>following</p>
+                    <p class="accountDetailContainer"><span class="accountDetail" id="postsNumber">21</span>posts</p>
+                    <p class="accountDetailContainer"><span class="accountDetail" id="followers">500</span>followers</p>
+                    <p class="accountDetailContainer"><span class="accountDetail" id="following">500</span>following</p>
                 </div>
-                <div class="username">
+                <div id="username">
                     <h3>Dhaval Kantaria</h3>
                 </div>
             </div>
@@ -79,129 +78,129 @@
     </div>
 
     <div class="menu">
-        <div class="menu-container">
-            <button id="posts" class="active">
-                <i class="fas fa-th"></i>POSTS
+        <div class="menuContainer">
+            <button class="menuPage active" id="posts">
+                <i class="fas fa-th menuIcon"></i>POSTS
             </button>
-            <button id="igtv">
-                <i class="fas fa-tv"></i>IGTV
+            <button class="menuPage" id="igtv">
+                <i class="fas fa-tv menuIcon"></i>IGTV
             </button>
-            <button id="saved">
-                <i class="far fa-bookmark"></i>SAVED
+            <button class="menuPage" id="saved">
+                <i class="far fa-bookmark  menuIcon"></i>SAVED
             </button>
-            <button id="tagged">
-                <i class="far fa-id-badge"></i>TAGGED
+            <button class="menuPage" id="tagged">
+                <i class="far fa-id-badge  menuIcon"></i>TAGGED
             </button>
         </div>
     </div>
 
     <div class="posts">
-        <div class="posts-container">
+        <div class="postsContainer">
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-rolls-royce-ghost-vn.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-rolls-royce-ghost-vn.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>      
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-toyota-gr-supra-a91-edition-5k-ni.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-toyota-gr-supra-a91-edition-5k-ni.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-lamborghini-huracan-evo-8k-sw.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-lamborghini-huracan-evo-8k-sw.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
+                </div>
+            </div>          
+            <div class="postImage">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/mercedes-amg-gtr-4k-2021-q7.jpg" alt="post" class="post">
+                <div class="likes">
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>            
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/mercedes-amg-gtr-4k-2021-q7.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/aston-martin-v12-zagato-heritage-coupe--and-zagato-heritage-speedster-5k-w6.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>            
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/aston-martin-v12-zagato-heritage-coupe--and-zagato-heritage-speedster-5k-w6.jpg" alt="">
+                <img src="https://images.hdqwalls.com/download/h6-julietta-cgi-64-2880x1800.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>            
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/download/h6-julietta-cgi-64-2880x1800.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/2018-aston-martin-db11-volante-c4.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>            
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/2018-aston-martin-db11-volante-c4.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/vision-gran-turismo-mercedes-benz.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>            
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/vision-gran-turismo-mercedes-benz.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/bentley-continental-gt-pikes-peak-2021-0a.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>            
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/bentley-continental-gt-pikes-peak-2021-0a.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/bugatti-chiron-cgi-front-look-4k-91.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
-            </div>            
+            </div>
+
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/bugatti-chiron-cgi-front-look-4k-91.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/jaguar-vision-gran-turismo-sv-1900hp-car-4f.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>
 
             <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/jaguar-vision-gran-turismo-sv-1900hp-car-4f.jpg" alt="">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/lotus-evija-r5.jpg" alt="post" class="post">
                 <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
+                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
                 </div>
             </div>
-
-            <!-- <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/lotus-evija-r5.jpg" alt="">
-                <div class="likes">
-                    <button><i class="fas fa-heart"></i>200</button>
-                    <button><i class="fas fa-comment"></i>20</button>
-                </div>
-            </div> -->
 
             
         </div>
     </div>
 
     <footer>
-        <div class="footer-container">
+        <div class="footerContainer">
             <div class="siteInfo">
                 <ul id="listsOfInfo">
-                    <li id="about">About</li>
-                    <li id="blog">Blog</li>
-                    <li id="jobs">Jobs</li>
-                    <li id="help">Help</li>
-                    <li id="api">API</li>
-                    <li id="privacy">Privacy</li>
-                    <li id="terms">Terms</li>
-                    <li id="top-accounts">Top accounts</li>
-                    <li id="hashtag">Hashtag</li>
-                    <li id="location">Location</li>
+                    <li class="infoPage" id="about"><a href="" class="infoPageLink">About</a></li>
+                    <li class="infoPage" id="blog"><a href="" class="infoPageLink">Blog</a></li>
+                    <li class="infoPage" id="jobs"><a href="" class="infoPageLink">Jobs</a></li>
+                    <li class="infoPage" id="help"><a href="" class="infoPageLink">Help</a></li>
+                    <li class="infoPage" id="api"><a href="" class="infoPageLink">API</a></li>
+                    <li class="infoPage" id="privacy"><a href="" class="infoPageLink">Privacy</a></li>
+                    <li class="infoPage" id="terms"><a href="" class="infoPageLink">Terms</a></li>
+                    <li class="infoPage" id="top-accounts"><a href="" class="infoPageLink">Top accounts</a></li>
+                    <li class="infoPage" id="hashtag"><a href="" class="infoPageLink">Hashtag</a></li>
+                    <li class="infoPage" id="location"><a href="" class="infoPageLink">Location</a></li>
                 </ul>
             </div>
             <div class="languages">

@@ -10,7 +10,7 @@ body {
 
 /********* HEADER STYLES *********/
 
-header {
+.header {
     width: 100%;
     position: fixed;
     top: 0;
@@ -20,7 +20,7 @@ header {
     z-index: 5;
 }
 
-.header-container {
+.headerContainer {
     width: 60%;
     margin: 0 auto;
     display: flex;
@@ -28,7 +28,7 @@ header {
     align-items: center;
 }
 
-#name {
+#appName {
     margin: 8px 0;
     font-family: 'Lobster', cursive;
     font-family: 'Lobster Two', cursive;
@@ -36,32 +36,33 @@ header {
     font-weight: 400;
 }
 
-header input {
+#search {
     padding: 7px 10px;
     background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
     border-radius: 3px;
     width: 20%;
     text-align: center;
+    font-family: FontAwesome, Arial
 }
 
-header input::placeholder {
+#search::placeholder {
     text-align: center;
 }
 
-header input:focus {
+#search:focus {
     outline: none;
 }
 
-.buttons ul {
+.listofPages {
     list-style: none;
 }
 
-.buttons ul li {
+.page {
     display: inline-block;
 }
 
-.icon {
+.pageIcon {
     background-color: transparent;
     border: none;
     font-size: 1.5rem;
@@ -70,13 +71,13 @@ header input:focus {
     margin-right: 0.7rem;
 }
 
-#profileIcon {
+#profilePage {
     padding-top: 10px;
     max-width: 25px;
     height: 30px;
 }
 
-#profileIcon img {
+#profilePage img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -88,22 +89,19 @@ header input:focus {
 
 .profile {
     margin: 50px auto;
-    /* border: 2px solid black; */
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     width: 60%;
     height: 200px;
     margin-bottom: 0;
 }
 
-.profile-container {
+.profileContainer {
     width: 90%;
     height: 100%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
-
 
 .profilePhoto {
     max-width: 150px;
@@ -114,7 +112,7 @@ header input:focus {
     margin-left: 1rem;
 }
 
-.profilePhoto img {
+#profilePhoto {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -140,7 +138,7 @@ header input:focus {
     margin-right: 1rem;
 }
 
-#editProfile {
+#editProfileBtn {
     font-size: 0.9rem;
     font-weight: 600;
     padding:  0.4rem;
@@ -151,7 +149,7 @@ header input:focus {
     margin-right: 1rem;
 }
 
-#setting {
+#settingBtn {
     font-size: 1.5rem;
     background: transparent;
     border: none;
@@ -161,13 +159,13 @@ header input:focus {
 .accountDetails {
     display: flex;
 }
-.accountDetails p {
+.accountDetailContainer {
     font-family: 'Lato', sans-serif;
     font-size: 1.1rem;
     margin-right: 1rem;
 }
 
-.accountDetails span {
+.accountDetail {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 1.3rem;
@@ -181,14 +179,14 @@ header input:focus {
     margin: 0 auto;
 }
 
-.menu-container {
+.menuContainer {
     width: 50%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
 
-.menu button {
+.menuPage {
     background: transparent;
     font-size: 0.85rem;
     border: none;
@@ -197,12 +195,12 @@ header input:focus {
     cursor: pointer;
 }
 
-.menu button i {
+.menuIcon {
     margin-right: 7px;
     font-size: 1rem;
 }
 
-.menu button.active {
+.menuPage.active {
     color: rgba(0, 0, 0, 0.8);
     border-top: 1px solid rgba(0, 0, 0, 0.8);
 }
@@ -216,11 +214,7 @@ header input:focus {
     margin-bottom: 30px;
 }
 
-.posts-container {
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center; */
+.postsContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     grid-auto-rows: 340px;
@@ -233,7 +227,7 @@ header input:focus {
     height: 100%;
 }
 
-.posts img {
+.post {
     width: 100%;
     height: 100%;
 }
@@ -253,7 +247,7 @@ header input:focus {
     transition: opacity .2s, visibility .2s;
 }
 
-.likes button {
+.likeBtn {
     background: transparent;
     border: none;
     font-size: 1.2rem;
@@ -262,11 +256,11 @@ header input:focus {
     margin-right: 20px;
 }
 
-.likes button:nth-child(2) {
+.likeBtn:nth-child(2) {
     margin-right: 0;
 }
 
-.likes i {
+.likeIcon {
     margin-right: 7px;
     font-weight: 700;
 }
@@ -285,7 +279,7 @@ header input:focus {
 
 /*********** FOOTER STYLES **********/
 
-.footer-container {
+.footerContainer {
     width: 60%;
     margin: 0 auto;
     display: flex;
@@ -293,7 +287,6 @@ header input:focus {
     align-items: center;
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.5);
     margin-bottom: 60px;
 }
 
@@ -302,10 +295,19 @@ header input:focus {
     
 }
 
-#listsOfInfo li{
+.infoPage {
     display: inline-block;
     margin-left: 20px;
     
+}
+
+.infoPageLink {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+.infoPageLink:hover {
+    color: rgba(0, 0, 0, 0.8);
 }
 
 #listOfInfo li:nth-child(1) {
@@ -322,6 +324,10 @@ header input:focus {
     border: none;
     color: rgba(0, 0, 0, 0.5);
     margin-right: 25px;
+}
+
+#languages:hover {
+    cursor: pointer;
 }
 
 #languages:focus {
