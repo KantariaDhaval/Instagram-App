@@ -1,2 +1,2 @@
-# Week-0-Instagram-page-
+# Instagram App
 Made static page of instagram
