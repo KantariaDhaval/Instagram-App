@@ -258,10 +258,10 @@ body {
 .postHoverBtn {
     background: transparent;
     border: none;
-    font-size: 1.92rem;
+    font-size: 1.9rem;
     font-weight: 500;
     color: white;
-    margin-right: 20px;
+    margin-right: 2rem;
 }
 
 .postHoverBtn:nth-child(2) {

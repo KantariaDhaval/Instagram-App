@@ -1,4 +1,4 @@
-postsData = `[
+[
     {
         "id": 1,
         "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-rolls-royce-ghost-vn.jpg",
@@ -83,4 +83,4 @@ postsData = `[
         "numberOfLikes": 1200,
         "numberOfComments": 120
     }
-]`
+]
