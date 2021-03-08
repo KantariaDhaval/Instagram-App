@@ -1,10 +1,43 @@
+const profileContainer = document.getElementById('profileContainer');
 const postsContainer = document.getElementById("postsContainer");
-let postsData;
+let profileData, postsData;
 
 // const posts = JSON.parse(postsData);
-async function fetchData() {
+async function fetchProfileData() {
+    await fetch('./profileData.JSON')
+            .then((response) => response.json())
+            .then((data) => {
+                profileData = data[0];
+            });
+
+    // console.log(profileData);
+
+    profileContainer.innerHTML = `
+    <div class="profilePhoto">
+        <img src=${profileData.profilePhoto} id="profilePhoto" alt=${profileData.alt}>
+    </div>
+    <div class="profileData">
+        <div class="handle">
+            <div id="handleName"><h2>${profileData.handleName}</h2></div>
+            <button id="editProfileBtn">Edit Profile</button>
+            <button id="settingBtn"><i class="fas fa-cog"></i></button>
+        </div>
+        <div class="accountDetails">
+            <p class="accountDetailContainer"><span class="accountDetail" id="postsNumber">${profileData.numberOfPosts}</span>posts</p>
+            <p class="accountDetailContainer"><span class="accountDetail" id="followers">${profileData.followers}</span>followers</p>
+            <p class="accountDetailContainer"><span class="accountDetail" id="following">${profileData.following}</span>following</p>
+        </div>
+        <div id="username">
+            <h3>${profileData.username}</h3>
+        </div>
+    </div>
+    `;
+}
+
+
+async function fetchPostData() {
     await fetch('./postsData.JSON')
-                    .then((respond) => respond.json())
+                    .then((response) => response.json())
                     .then((data) => {
                         postsData = data;
                     });
@@ -20,7 +53,7 @@ async function fetchData() {
         postImage.alt = post.alt;
     
         const likesAndCommentsDiv = document.createElement("div");
-        likesAndCommentsDiv.classList.add("likes");
+        likesAndCommentsDiv.classList.add("likesAndComments");
     
         const postHoverLikeBtn = document.createElement("button");
         postHoverLikeBtn.classList.add("postHoverBtn");
@@ -61,5 +94,7 @@ async function fetchData() {
         postsContainer.appendChild(postDiv);
     });
 }
-fetchData();
 
+
+fetchProfileData();
+fetchPostData();
