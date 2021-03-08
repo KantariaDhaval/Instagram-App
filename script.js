@@ -12,25 +12,28 @@ async function fetchProfileData() {
 
     // console.log(profileData);
 
+    const profilePhotoIcon = document.getElementById("profilePhotoIcon");
+    profilePhotoIcon.src = profileData.profilePhoto;
+
     profileContainer.innerHTML = `
-    <div class="profilePhoto">
-        <img src=${profileData.profilePhoto} id="profilePhoto" alt=${profileData.alt}>
-    </div>
-    <div class="profileData">
-        <div class="handle">
-            <div id="handleName"><h2>${profileData.handleName}</h2></div>
-            <button id="editProfileBtn">Edit Profile</button>
-            <button id="settingBtn"><i class="fas fa-cog"></i></button>
+        <div class="profilePhoto">
+            <img src=${profileData.profilePhoto} id="profilePhoto" alt=${profileData.alt}>
         </div>
-        <div class="accountDetails">
-            <p class="accountDetailContainer"><span class="accountDetail" id="postsNumber">${profileData.numberOfPosts}</span>posts</p>
-            <p class="accountDetailContainer"><span class="accountDetail" id="followers">${profileData.followers}</span>followers</p>
-            <p class="accountDetailContainer"><span class="accountDetail" id="following">${profileData.following}</span>following</p>
+        <div class="profileData">
+            <div class="handle">
+                <div id="handleName"><h2>${profileData.handleName}</h2></div>
+                <button id="editProfileBtn">Edit Profile</button>
+                <button id="settingBtn"><i class="fas fa-cog"></i></button>
+            </div>
+            <div class="accountDetails">
+                <p class="accountDetailContainer"><span class="accountDetail" id="postsNumber">${profileData.numberOfPosts}</span>posts</p>
+                <p class="accountDetailContainer"><span class="accountDetail" id="followers">${profileData.followers}</span>followers</p>
+                <p class="accountDetailContainer"><span class="accountDetail" id="following">${profileData.following}</span>following</p>
+            </div>
+            <div id="username">
+                <h3>${profileData.username}</h3>
+            </div>
         </div>
-        <div id="username">
-            <h3>${profileData.username}</h3>
-        </div>
-    </div>
     `;
 }
 
