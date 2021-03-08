@@ -8,6 +8,10 @@ body {
     background-color: rgba(0, 0, 0, 0.03);
 }
 
+:root {
+    font-size: 10px;
+}
+
 /********* HEADER STYLES *********/
 
 .header {
@@ -29,15 +33,15 @@ body {
 }
 
 #appName {
-    margin: 8px 0;
+    margin: 0.8rem 0;
     font-family: 'Lobster', cursive;
     font-family: 'Lobster Two', cursive;
-    font-size: 1.7rem;
+    font-size: 2.7rem;
     font-weight: 400;
 }
 
 #search {
-    padding: 7px 10px;
+    padding: 0.7rem 1rem;
     background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
     border-radius: 3px;
@@ -65,16 +69,16 @@ body {
 .pageIcon {
     background-color: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     font-weight: 300;
     cursor: pointer;
-    margin-right: 0.7rem;
+    margin-right: 1.2rem;
 }
 
 #profilePage {
-    padding-top: 10px;
-    max-width: 25px;
-    height: 30px;
+    padding-top: 1rem;
+    max-width: 2.5rem;
+    height: 3rem;
 }
 
 #profilePage img {
@@ -88,10 +92,10 @@ body {
 /************ PROFILES STYLES *************/
 
 .profile {
-    margin: 50px auto;
+    margin: 5rem auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     width: 60%;
-    height: 200px;
+    height: 20rem;
     margin-bottom: 0;
 }
 
@@ -104,12 +108,12 @@ body {
 }
 
 .profilePhoto {
-    max-width: 150px;
-    height: 150px;
+    max-width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     flex: 1;
-    margin-right: 7rem;
-    margin-left: 1rem;
+    margin-right: 11.2rem;
+    margin-left: 1.6rem;
 }
 
 #profilePhoto {
@@ -132,25 +136,25 @@ body {
 }
 
 #handleName {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     font-weight: 200;
     font-family: 'Raleway', sans-serif;
     margin-right: 1rem;
 }
 
 #editProfileBtn {
-    font-size: 0.9rem;
+    font-size: 1.44rem;
     font-weight: 600;
-    padding:  0.4rem;
+    padding:  0.64rem;
     border-radius: 3px;
     background-color: #f5f5f5;
     border: 1px solid #bbbbbb;
     cursor: pointer;
-    margin-right: 1rem;
+    margin-right: 1.6rem;
 }
 
 #settingBtn {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -161,15 +165,19 @@ body {
 }
 .accountDetailContainer {
     font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
-    margin-right: 1rem;
+    font-size: 1.76rem;
+    margin-right: 1.6rem;
 }
 
 .accountDetail {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
-    font-size: 1.3rem;
-    margin: 0.3rem;
+    font-size: 2rem;
+    margin: 0.5rem;
+}
+
+#username {
+    font-size: 1.6rem;
 }
 
 
@@ -188,16 +196,16 @@ body {
 
 .menuPage {
     background: transparent;
-    font-size: 0.85rem;
+    font-size: 1.36rem;
     border: none;
-    padding: 1rem;
+    padding: 1.6rem;
     color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
 
 .menuIcon {
     margin-right: 7px;
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
 
 .menuPage.active {
@@ -211,14 +219,14 @@ body {
 .posts {
     width: 60%;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 }
 
 .postsContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    grid-auto-rows: 340px;
-    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(34rem, 1fr));
+    grid-auto-rows: 34rem;
+    grid-gap: 2.5rem;
 }
 
 .postImage {
@@ -250,7 +258,7 @@ body {
 .likeBtn {
     background: transparent;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.92rem;
     font-weight: 500;
     color: white;
     margin-right: 20px;
@@ -261,7 +269,7 @@ body {
 }
 
 .likeIcon {
-    margin-right: 7px;
+    margin-right: 0.7rem;
     font-weight: 700;
 }
 
@@ -286,8 +294,8 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
-    margin-bottom: 60px;
+    font-size: 1.44rem;
+    margin-bottom: 6rem;
 }
 
 #listsOfInfo {
@@ -297,7 +305,7 @@ body {
 
 .infoPage {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 2rem;
     
 }
 
@@ -316,14 +324,14 @@ body {
 
 .languages {
     display: flex;
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 
 #languages {
     background-color: transparent;
     border: none;
     color: rgba(0, 0, 0, 0.5);
-    margin-right: 25px;
+    margin-right: 2.5rem;
 }
 
 #languages:hover {
