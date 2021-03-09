@@ -23,34 +23,22 @@
             <h2 id="appName">Instagram</h2>
             <input type="text" id="search" placeholder='&#xF002; Search'>     
             <div class="pages">
-                <ul class="listOfPages">
-                    <li class="page">
-                        <button class="pageIcon" id="homePage">
-                            <i class="fas fa-home"></i>
-                        </button>
-                    </li>
-                    <li class="page">
-                        <button class="pageIcon" id="chatPage">
-                            <i class="fab fa-facebook-messenger"></i>
-                        </button>
-                    </li>
-                    <li class="page">
-                        <button class="pageIcon" id="searchPage">
-                            <i class="far fa-compass"></i>
-                        </button>
-                    </li>
-                    <li class="page">
-                        <button class="pageIcon" id="likePage">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </li>
-                    <li class="page">
-                        <button class="pageIcon" id="profilePage">
-                            <img src="https://i.pinimg.com/236x/a0/4d/84/a04d849cf591c2f980548b982f461401.jpg" alt="Profile Photo" id="profilePhotoIcon">
-                        </button>
-                    </li>
-                </ul>
-            </div>   
+                <button class="pageIcon" id="homePage">
+                    <i class="fas fa-home"></i>
+                </button>
+                <button class="pageIcon" id="chatPage">
+                    <i class="fab fa-facebook-messenger"></i>
+                </button>
+                <button class="pageIcon" id="searchPage">
+                    <i class="far fa-compass"></i>
+                </button>
+                <button class="pageIcon" id="likePage">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="pageIcon"            id="profilePage">
+                    <img src="https://i.pinimg.com/236x/a0/4d/84/a04d849cf591c2f980548b982f461401.jpg" alt="Profile Photo" id="profilePhotoIcon">
+                </button>
+            </div>    
         </div>
     </header>
     
@@ -62,33 +50,56 @@
 
     <div class="menu">
         <div class="menuContainer">
-            <button class="menuPage active" id="posts">
-                <i class="fas fa-th menuIcon"></i>POSTS
+            <button class="menuPage active" id="postsBtn">
+                <i class="fas fa-th menuIcon"></i>
+                POSTS
             </button>
-            <button class="menuPage" id="igtv">
-                <i class="fas fa-tv menuIcon"></i>IGTV
+            <button class="menuPage" id="igtvBtn">
+                <i class="fas fa-tv menuIcon"></i>
+                IGTV
             </button>
-            <button class="menuPage" id="saved">
-                <i class="far fa-bookmark  menuIcon"></i>SAVED
+            <button class="menuPage" id="savedBtn">
+                <i class="far fa-bookmark  menuIcon"></i>
+                SAVED
             </button>
-            <button class="menuPage" id="tagged">
-                <i class="far fa-id-badge  menuIcon"></i>TAGGED
+            <button class="menuPage" id="taggedBtn">
+                <i class="far fa-id-badge  menuIcon"></i>
+                TAGGED
             </button>
         </div>
     </div>
 
-    <div class="posts">
-        <div class="postsContainer" id="postsContainer">
-            
-            <!-- <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-rolls-royce-ghost-vn.jpg" alt="post" class="post">
+    <div class="photos" id="posts">
+        <div class="photosContainer" id="postsContainer">
+            <!-- <div class="photoImage">
+                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-rolls-royce-ghost-vn.jpg" alt="photo" class="photo">
                 <div class="likesAndComments">
-                    <button class="postHoverBtn" id="likeBtn"><i class="postHoverIcon fas fa-heart"></i>200</button>
-                    <button class="postHoverBtn" id="commentBtn"><i class="postHoverIcon fas fa-comment"></i>20</button>
+                    <button class="photoHoverBtn" id="likeBtn">
+                        <i class="photoHoverIcon fas fa-heart"></i>200
+                    </button>
+                    <button class="photoHoverBtn" id="commentBtn">
+                        <i class="photoHoverIcon fas fa-comment"></i>20
+                    </button>
                 </div>
             </div>   -->
-            
-            
+        </div>
+    </div>
+
+    <div class="photos hidden" id="igtv">
+        <div class="photosContainer" id="igtvContainer">
+            <!-- DATA COMES FROM JSON FILE -->
+        </div>
+    </div>
+
+    <div class="photos hidden" id="saved">
+        <div class="photosContainer" id="savedContainer">
+            <!-- DATA COMES FROM JSON FILE -->
+        </div>
+    </div>
+
+    <div class="photos hidden" id="tagged">
+        <div class="photosContainer" id="taggedContainer">
+            <!-- DATA COMES FROM JSON FILE -->
         </div>
     </div>
 

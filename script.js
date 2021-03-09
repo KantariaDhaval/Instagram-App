@@ -1,5 +1,8 @@
 const profileContainer = document.getElementById('profileContainer');
 const postsContainer = document.getElementById("postsContainer");
+const igtvContainer = document.getElementById("igtvContainer");
+const savedContainer = document.getElementById("savedContainer");
+const taggedContainer = document.getElementById("taggedContainer");
 
 // FUNCTION FOR FETCHING PROFILE DATA 
 async function fetchProfileData() {
@@ -10,17 +13,43 @@ async function fetchProfileData() {
             });
 }
 
-// FUNCTION FOR FETCHING POSTS DATA FROM JSON FILE AND SHOW IT 
 async function fetchPostData() {
     await fetch('./postsData.JSON')
             .then((response) => response.json())
             .then((data) => {
-                showPostsData(data);
+                showPostsData(data, postsContainer);
+            });
+}
+
+async function fetchIgtvData() {
+    await fetch('./igtvData.JSON')
+            .then((response) => response.json())
+            .then((data) => {
+                showPostsData(data, igtvContainer);
+            });
+}
+
+async function fetchSavedData() {
+    await fetch('./savedData.JSON')
+            .then((response) => response.json())
+            .then((data) => {
+                showPostsData(data, savedContainer);
+            });
+}
+
+async function fetchTaggedData() {
+    await fetch('./taggedData.JSON')
+            .then((response) => response.json())
+            .then((data) => {
+                showPostsData(data, taggedContainer);
             });
 }
 
 fetchProfileData();
 fetchPostData();
+fetchIgtvData();
+fetchSavedData();
+fetchTaggedData();
 
 function showProfileData(profileData) {
 
@@ -52,17 +81,17 @@ function showProfileData(profileData) {
     `;
 }
 
-function showPostsData(postsData) {
-    postsData.forEach(post => {
+function showPostsData(photosData, container) {
+    photosData.forEach(photo => {
         // POST CONTAINER
-        const postDiv = document.createElement("div");
-        postDiv.classList.add("postImage");
+        const photoDiv = document.createElement("div");
+        photoDiv.classList.add("photoImage");
         
         // POST IMAGE
-        const postImage = document.createElement("img");
-        postImage.classList.add("post");
-        postImage.src = post.postImageLink;
-        postImage.alt = post.alt;
+        const photoImage = document.createElement("img");
+        photoImage.classList.add("photo");
+        photoImage.src = photo.postImageLink;
+        photoImage.alt = photo.alt;
     
         // SHOW LIKES AND COMMENTS WHEN HOVER ON IMAGE
         const likesAndCommentsDiv = document.createElement("div");
@@ -71,49 +100,109 @@ function showPostsData(postsData) {
 
         // ***** POST HOVER CONTENT *****
         // LIKES WHEN HOVER
-        const postHoverLikeBtn = document.createElement("button");
-        postHoverLikeBtn.classList.add("postHoverBtn");
+        const photoHoverLikeBtn = document.createElement("button");
+        photoHoverLikeBtn.classList.add("photoHoverBtn");
         
         // ICON FOR LIKE
-        const postHoverLikeIcon = document.createElement("i");
-        postHoverLikeIcon.classList.add("postHoverIcon");
-        postHoverLikeIcon.classList.add("fas");
-        postHoverLikeIcon.classList.add("fa-heart");
+        const photoHoverLikeIcon = document.createElement("i");
+        photoHoverLikeIcon.classList.add("photoHoverIcon");
+        photoHoverLikeIcon.classList.add("fas");
+        photoHoverLikeIcon.classList.add("fa-heart");
     
         // NUMBER OF LIKES
         const numberOfLikes = document.createElement("span");
-        numberOfLikes.innerText = post.numberOfLikes;
+        numberOfLikes.innerText = photo.numberOfLikes;
         numberOfLikes.id = "numberOfLikes";
         
         // COMMENTS WHEN HOVER
-        const postHoverCommentBtn = document.createElement("button");
-        postHoverCommentBtn.classList.add("postHoverBtn");
+        const photoHoverCommentBtn = document.createElement("button");
+        photoHoverCommentBtn.classList.add("photoHoverBtn");
         
         // ICON FOR COMMENT
-        const postHoverCommentIcon = document.createElement("i");
-        postHoverCommentIcon.classList.add("postHoverIcon");
-        postHoverCommentIcon.classList.add("fas");
-        postHoverCommentIcon.classList.add("fa-comment");
+        const photoHoverCommentIcon = document.createElement("i");
+        photoHoverCommentIcon.classList.add("photoHoverIcon");
+        photoHoverCommentIcon.classList.add("fas");
+        photoHoverCommentIcon.classList.add("fa-comment");
     
         // NUMBER OF COMMENTS
         const numberOfComments = document.createElement("span");
-        numberOfComments.innerText = post.numberOfComments;
+        numberOfComments.innerText = photo.numberOfComments;
         numberOfComments.id = "numberOfComments";
         
         
         // **** APPEND ALL ELEMENTS TO THEIR PARENTS ****
-        postHoverLikeBtn.appendChild(postHoverLikeIcon);
-        postHoverLikeBtn.appendChild(numberOfLikes);
+        photoHoverLikeBtn.appendChild(photoHoverLikeIcon);
+        photoHoverLikeBtn.appendChild(numberOfLikes);
     
-        postHoverCommentBtn.appendChild(postHoverCommentIcon);
-        postHoverCommentBtn.appendChild(numberOfComments);
+        photoHoverCommentBtn.appendChild(photoHoverCommentIcon);
+        photoHoverCommentBtn.appendChild(numberOfComments);
 
-        likesAndCommentsDiv.appendChild(postHoverLikeBtn);
-        likesAndCommentsDiv.appendChild(postHoverCommentBtn);
+        likesAndCommentsDiv.appendChild(photoHoverLikeBtn);
+        likesAndCommentsDiv.appendChild(photoHoverCommentBtn);
     
-        postDiv.appendChild(postImage);
-        postDiv.appendChild(likesAndCommentsDiv);
+        photoDiv.appendChild(photoImage);
+        photoDiv.appendChild(likesAndCommentsDiv);
     
-        postsContainer.appendChild(postDiv);
+        container.appendChild(photoDiv);
     });
+}
+
+
+// ******* EVENT LISTENERS *******
+
+const postsBtn = document.getElementById('postsBtn');
+const igtvBtn = document.getElementById('igtvBtn');
+const savedBtn = document.getElementById('savedBtn');
+const taggedBtn = document.getElementById('taggedBtn');
+const posts = document.getElementById('posts');
+const igtv = document.getElementById('igtv');
+const saved = document.getElementById('saved');
+const tagged = document.getElementById('tagged');
+
+postsBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    addActiveClassToBtn(e.target);
+    addHiddenClassToContainers(e.target);
+    posts.classList.remove('hidden');
+})
+
+igtvBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    addActiveClassToBtn(e.target);
+    addHiddenClassToContainers(e.target);
+    igtv.classList.remove('hidden');
+})
+
+savedBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    addActiveClassToBtn(e.target);
+    addHiddenClassToContainers(e.target);
+    saved.classList.remove('hidden');
+})
+
+taggedBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    addActiveClassToBtn(e.target);
+    addHiddenClassToContainers(e.target);
+    tagged.classList.remove('hidden');
+})
+
+function addActiveClassToBtn(targetBtn) {
+    postsBtn.classList.remove('active');
+    igtvBtn.classList.remove('active');
+    savedBtn.classList.remove('active');
+    taggedBtn.classList.remove('active');
+
+    targetBtn.classList.add('active');
+}
+
+function addHiddenClassToContainers(targetBtn) {
+    posts.classList.add('hidden');
+    igtv.classList.add('hidden');
+    saved.classList.add('hidden');
+    tagged.classList.add('hidden');
 }
