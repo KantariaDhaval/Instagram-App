@@ -1,20 +1,35 @@
 const profileContainer = document.getElementById('profileContainer');
 const postsContainer = document.getElementById("postsContainer");
-let profileData, postsData;
 
 // FUNCTION FOR FETCHING PROFILE DATA 
 async function fetchProfileData() {
     await fetch('./profileData.JSON')
             .then((response) => response.json())
             .then((data) => {
-                profileData = data[0];
+                showProfileData(data[0]);
             });
+}
+
+// FUNCTION FOR FETCHING POSTS DATA FROM JSON FILE AND SHOW IT 
+async function fetchPostData() {
+    await fetch('./postsData.JSON')
+            .then((response) => response.json())
+            .then((data) => {
+                showPostsData(data);
+            });
+}
+
+fetchProfileData();
+fetchPostData();
+
+function showProfileData(profileData) {
 
     // PROFILE PHOTO ICON IN HEADER
     const profilePhotoIcon = document.getElementById("profilePhotoIcon");
     profilePhotoIcon.src = profileData.profilePhoto;
 
     // SHOW ALL PROFILE CONTENT
+
     profileContainer.innerHTML = `
         <div class="profilePhoto">
             <img src=${profileData.profilePhoto} id="profilePhoto" alt=${profileData.alt}>
@@ -37,15 +52,7 @@ async function fetchProfileData() {
     `;
 }
 
-// FUNCTION FOR FETCHING POSTS DATA FROM JSON FILE AND SHOW IT 
-async function fetchPostData() {
-    await fetch('./postsData.JSON')
-                    .then((response) => response.json())
-                    .then((data) => {
-                        postsData = data;
-                    });
-    // console.log(postData);
-
+function showPostsData(postsData) {
     postsData.forEach(post => {
         // POST CONTAINER
         const postDiv = document.createElement("div");
@@ -62,8 +69,8 @@ async function fetchPostData() {
         likesAndCommentsDiv.classList.add("likesAndComments");
     
 
-        // POST HOVER CONTENT
-        // LIKES
+        // ***** POST HOVER CONTENT *****
+        // LIKES WHEN HOVER
         const postHoverLikeBtn = document.createElement("button");
         postHoverLikeBtn.classList.add("postHoverBtn");
         
@@ -78,7 +85,7 @@ async function fetchPostData() {
         numberOfLikes.innerText = post.numberOfLikes;
         numberOfLikes.id = "numberOfLikes";
         
-        // COMMENTS
+        // COMMENTS WHEN HOVER
         const postHoverCommentBtn = document.createElement("button");
         postHoverCommentBtn.classList.add("postHoverBtn");
         
@@ -94,7 +101,7 @@ async function fetchPostData() {
         numberOfComments.id = "numberOfComments";
         
         
-        // APPEND ALL ELEMENTS TO THEIR PARENTS
+        // **** APPEND ALL ELEMENTS TO THEIR PARENTS ****
         postHoverLikeBtn.appendChild(postHoverLikeIcon);
         postHoverLikeBtn.appendChild(numberOfLikes);
     
@@ -110,7 +117,3 @@ async function fetchPostData() {
         postsContainer.appendChild(postDiv);
     });
 }
-
-
-fetchProfileData();
-fetchPostData();
