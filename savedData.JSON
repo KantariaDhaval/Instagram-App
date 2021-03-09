@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "postImageLink": "https://images.unsplash.com/photo-1446274093550-8cffcc304b98?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8bmlhZ2FyYSUyMGZhbGx8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "photoImageLink": "https://images.unsplash.com/photo-1446274093550-8cffcc304b98?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8bmlhZ2FyYSUyMGZhbGx8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
         "alt": "Post Image 1",
         "numberOfLikes": 100,
         "numberOfComments": 10
     },
     {
         "id": 2,
-        "postImageLink": "https://images.unsplash.com/photo-1469285994282-454ceb49e63c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YXN0b24lMjBtYXJ0aW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "photoImageLink": "https://images.unsplash.com/photo-1469285994282-454ceb49e63c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YXN0b24lMjBtYXJ0aW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
         "alt": "Post Image 2",
         "numberOfLikes": 200,
         "numberOfComments": 20

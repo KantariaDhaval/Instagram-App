@@ -3,7 +3,9 @@ const postsContainer = document.getElementById("postsContainer");
 const igtvContainer = document.getElementById("igtvContainer");
 const savedContainer = document.getElementById("savedContainer");
 const taggedContainer = document.getElementById("taggedContainer");
+const numberOfPhotos = document.getElementById('photosNumber');
 
+let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
 // FUNCTION FOR FETCHING PROFILE DATA 
 async function fetchProfileData() {
     await fetch('./profileData.JSON')
@@ -17,6 +19,10 @@ async function fetchPostData() {
     await fetch('./postsData.JSON')
             .then((response) => response.json())
             .then((data) => {
+                numberOfPhotos.innerText = data.length;
+                // console.log(numberOfPhotos.innerText);
+                // console.log(data.length);
+                numberOfPosts = data.length;
                 showPostsData(data, postsContainer);
             });
 }
@@ -25,6 +31,8 @@ async function fetchIgtvData() {
     await fetch('./igtvData.JSON')
             .then((response) => response.json())
             .then((data) => {
+                numberOfIgtvs = data.length;
+                // console.log(data.length);
                 showPostsData(data, igtvContainer);
             });
 }
@@ -33,6 +41,8 @@ async function fetchSavedData() {
     await fetch('./savedData.JSON')
             .then((response) => response.json())
             .then((data) => {
+                numberOfSaved = data.length;
+                // console.log(data.length);
                 showPostsData(data, savedContainer);
             });
 }
@@ -41,6 +51,8 @@ async function fetchTaggedData() {
     await fetch('./taggedData.JSON')
             .then((response) => response.json())
             .then((data) => {
+                numberOfTagged = data.length;
+                // console.log(data.length);
                 showPostsData(data, taggedContainer);
             });
 }
@@ -55,30 +67,42 @@ function showProfileData(profileData) {
 
     // PROFILE PHOTO ICON IN HEADER
     const profilePhotoIcon = document.getElementById("profilePhotoIcon");
-    profilePhotoIcon.src = profileData.profilePhoto;
+    profilePhotoIcon.src = profileData.profilePhotoLink;
 
     // SHOW ALL PROFILE CONTENT
 
-    profileContainer.innerHTML = `
-        <div class="profilePhoto">
-            <img src=${profileData.profilePhoto} id="profilePhoto" alt=${profileData.alt}>
-        </div>
-        <div class="profileData">
-            <div class="handle">
-                <div id="handleName"><h2>${profileData.handleName}</h2></div>
-                <button id="editProfileBtn">Edit Profile</button>
-                <button id="settingBtn"><i class="fas fa-cog"></i></button>
-            </div>
-            <div class="accountDetails">
-                <p class="accountDetailContainer"><span class="accountDetail" id="postsNumber">${profileData.numberOfPosts}</span>posts</p>
-                <p class="accountDetailContainer"><span class="accountDetail" id="followers">${profileData.followers}</span>followers</p>
-                <p class="accountDetailContainer"><span class="accountDetail" id="following">${profileData.following}</span>following</p>
-            </div>
-            <div id="username">
-                <h3>${profileData.username}</h3>
-            </div>
-        </div>
-    `;
+    // profileContainer.innerHTML = `
+    //     <div class="profilePhoto">
+    //         <img src=${profileData.profilePhotoLink} id="profilePhoto" alt=${profileData.alt}>
+    //     </div>
+    //     <div class="profileData">
+    //         <div class="handle">
+    //             <div id="handleName"><h2>${profileData.handleName}</h2></div>
+    //             <button id="editProfileBtn">Edit Profile</button>
+    //             <button id="settingBtn"><i class="fas fa-cog"></i></button>
+    //         </div>
+    //         <div class="accountDetails">
+    //             <p class="accountDetailContainer"><span class="accountDetail" id="photosNumber">${profileData.numberOfPhotos}</span>posts</p>
+    //             <p class="accountDetailContainer"><span class="accountDetail" id="followers">${profileData.followers}</span>followers</p>
+    //             <p class="accountDetailContainer"><span class="accountDetail" id="following">${profileData.following}</span>following</p>
+    //         </div>
+    //         <div id="username">
+    //             <h3>${profileData.username}</h3>
+    //         </div>
+    //     </div>
+    // `;
+    const profilePhoto = document.getElementById('profilePhoto');
+    const handleName = document.getElementById('handleName');
+    const followers = document.getElementById('followers');
+    const following = document.getElementById('following');
+    const username = document.getElementById('username');
+
+    profilePhoto.src = profileData.profilePhotoLink;
+    handleName.innerText = profileData.handleName;
+    numberOfPhotos.innerText = profileData.numberOfPhotos;
+    followers.innerText = profileData.followers;
+    following.innerText = profileData.following;
+    username.innerText = profileData.username;
 }
 
 function showPostsData(photosData, container) {
@@ -90,7 +114,7 @@ function showPostsData(photosData, container) {
         // POST IMAGE
         const photoImage = document.createElement("img");
         photoImage.classList.add("photo");
-        photoImage.src = photo.postImageLink;
+        photoImage.src = photo.photoImageLink;
         photoImage.alt = photo.alt;
     
         // SHOW LIKES AND COMMENTS WHEN HOVER ON IMAGE
@@ -165,6 +189,8 @@ postsBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     posts.classList.remove('hidden');
+    numberOfPhotos.innerText = numberOfPosts;
+    // console.log(numberOfPosts);
 })
 
 igtvBtn.addEventListener('click', (e) => {
@@ -173,6 +199,8 @@ igtvBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     igtv.classList.remove('hidden');
+    numberOfPhotos.innerText = numberOfIgtvs;
+    // console.log(numberOfIgtvs);
 })
 
 savedBtn.addEventListener('click', (e) => {
@@ -181,6 +209,8 @@ savedBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     saved.classList.remove('hidden');
+    numberOfPhotos.innerText = numberOfSaved;
+    // console.log(numberOfSaved);
 })
 
 taggedBtn.addEventListener('click', (e) => {
@@ -189,6 +219,8 @@ taggedBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     tagged.classList.remove('hidden');
+    numberOfPhotos.innerText = numberOfTagged;
+    // console.log(numberOfTagged);
 })
 
 function addActiveClassToBtn(targetBtn) {
@@ -206,3 +238,5 @@ function addHiddenClassToContainers(targetBtn) {
     saved.classList.add('hidden');
     tagged.classList.add('hidden');
 }
+
+// console.log(numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged);
