@@ -20,8 +20,6 @@ async function fetchPostData() {
             .then((response) => response.json())
             .then((data) => {
                 numberOfPhotos.innerText = data.length;
-                // console.log(numberOfPhotos.innerText);
-                // console.log(data.length);
                 numberOfPosts = data.length;
                 showPostsData(data, postsContainer);
             });
@@ -32,7 +30,6 @@ async function fetchIgtvData() {
             .then((response) => response.json())
             .then((data) => {
                 numberOfIgtvs = data.length;
-                // console.log(data.length);
                 showPostsData(data, igtvContainer);
             });
 }
@@ -42,7 +39,6 @@ async function fetchSavedData() {
             .then((response) => response.json())
             .then((data) => {
                 numberOfSaved = data.length;
-                // console.log(data.length);
                 showPostsData(data, savedContainer);
             });
 }
@@ -52,7 +48,6 @@ async function fetchTaggedData() {
             .then((response) => response.json())
             .then((data) => {
                 numberOfTagged = data.length;
-                // console.log(data.length);
                 showPostsData(data, taggedContainer);
             });
 }
@@ -71,26 +66,6 @@ function showProfileData(profileData) {
 
     // SHOW ALL PROFILE CONTENT
 
-    // profileContainer.innerHTML = `
-    //     <div class="profilePhoto">
-    //         <img src=${profileData.profilePhotoLink} id="profilePhoto" alt=${profileData.alt}>
-    //     </div>
-    //     <div class="profileData">
-    //         <div class="handle">
-    //             <div id="handleName"><h2>${profileData.handleName}</h2></div>
-    //             <button id="editProfileBtn">Edit Profile</button>
-    //             <button id="settingBtn"><i class="fas fa-cog"></i></button>
-    //         </div>
-    //         <div class="accountDetails">
-    //             <p class="accountDetailContainer"><span class="accountDetail" id="photosNumber">${profileData.numberOfPhotos}</span>posts</p>
-    //             <p class="accountDetailContainer"><span class="accountDetail" id="followers">${profileData.followers}</span>followers</p>
-    //             <p class="accountDetailContainer"><span class="accountDetail" id="following">${profileData.following}</span>following</p>
-    //         </div>
-    //         <div id="username">
-    //             <h3>${profileData.username}</h3>
-    //         </div>
-    //     </div>
-    // `;
     const profilePhoto = document.getElementById('profilePhoto');
     const handleName = document.getElementById('handleName');
     const followers = document.getElementById('followers');
@@ -192,7 +167,6 @@ postsBtn.addEventListener('click', (e) => {
     addHiddenClassToContainers(e.target);
     posts.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfPosts;
-    // console.log(numberOfPosts);
 })
 
 igtvBtn.addEventListener('click', (e) => {
@@ -202,7 +176,6 @@ igtvBtn.addEventListener('click', (e) => {
     addHiddenClassToContainers(e.target);
     igtv.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfIgtvs;
-    // console.log(numberOfIgtvs);
 })
 
 savedBtn.addEventListener('click', (e) => {
@@ -212,7 +185,6 @@ savedBtn.addEventListener('click', (e) => {
     addHiddenClassToContainers(e.target);
     saved.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfSaved;
-    // console.log(numberOfSaved);
 })
 
 taggedBtn.addEventListener('click', (e) => {
@@ -222,7 +194,6 @@ taggedBtn.addEventListener('click', (e) => {
     addHiddenClassToContainers(e.target);
     tagged.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfTagged;
-    // console.log(numberOfTagged);
 })
 
 followBtn.addEventListener('click', (e) => {

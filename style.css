@@ -12,6 +12,12 @@ body {
     font-size: 10px;
 }
 
+button:focus,
+input:focus,
+select:focus {
+    outline: none;
+}
+
 /********* HEADER STYLES *********/
 
 .header {
@@ -52,10 +58,6 @@ body {
 
 #search::placeholder {
     text-align: center;
-}
-
-#search:focus {
-    outline: none;
 }
 
 .pageIcon {
@@ -151,10 +153,6 @@ body {
     color: black;
 }
 
-.followBtn:focus {
-    outline: none;
-}
-
 #dropdownBtn {
     background-color: rgb(0, 132, 255);
     color: white;
@@ -219,10 +217,6 @@ body {
     border-top: 1px solid rgba(0, 0, 0, 0.8);
 }
 
-.menuPage:focus {
-    outline: none;
-}
-
 
 /********* POSTS STYLES *********/
 
@@ -272,6 +266,7 @@ body {
     font-weight: 500;
     color: white;
     margin-right: 2rem;
+    cursor: pointer;
 }
 
 .phoHoverBtn:nth-child(2) {
@@ -281,11 +276,11 @@ body {
 .photoHoverIcon {
     margin-right: 0.7rem;
     font-weight: 700;
+    pointer-events: none;
 }
 
 .photoImage:hover {
     opacity: 0.7;
-    cursor: pointer;
 }
 
 .photoImage:hover .likesAndComments {
@@ -351,6 +346,4 @@ body {
     color: rgba(0, 0, 0, 0.8);
 }
 
-#languages:focus {
-    outline: none;
-}
+
