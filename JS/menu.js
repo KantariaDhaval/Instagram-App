@@ -18,7 +18,7 @@ async function fetchPostData() {
             .then((data) => {
                 numberOfPhotos.innerText = data.length;
                 numberOfPosts = data.length;
-                showPostsData(data, postsContainer);
+                showPhotosData(data, postsContainer);
             });
 }
 
@@ -27,7 +27,7 @@ async function fetchIgtvData() {
             .then((response) => response.json())
             .then((data) => {
                 numberOfIgtvs = data.length;
-                showPostsData(data, igtvContainer);
+                showIgtvData(data, igtvContainer);
             });
 }
 
@@ -36,7 +36,7 @@ async function fetchSavedData() {
             .then((response) => response.json())
             .then((data) => {
                 numberOfSaved = data.length;
-                showPostsData(data, savedContainer);
+                showPhotosData(data, savedContainer);
             });
 }
 
@@ -45,7 +45,7 @@ async function fetchTaggedData() {
             .then((response) => response.json())
             .then((data) => {
                 numberOfTagged = data.length;
-                showPostsData(data, taggedContainer);
+                showPhotosData(data, taggedContainer);
             });
 }
 
@@ -56,7 +56,7 @@ fetchTaggedData();
 
 
 
-function showPostsData(photosData, container) {
+function showPhotosData(photosData, container) {
     photosData.forEach(photo => {
         // POST CONTAINER
         const photoDiv = document.createElement("div");
@@ -131,6 +131,26 @@ function showPostsData(photosData, container) {
             photoHoverLikeIcon.classList.toggle('activeLikeIcon');
         })
     });
+}
+
+function showIgtvData(photosData, container) {
+    photosData.forEach(photo => {
+        const photoDiv = document.createElement("div");
+        photoDiv.classList.add("photoImage");
+        
+
+        const videoElement = document.createElement('video');
+        videoElement.classList.add('photo');
+        videoElement.controls = true;
+        videoElement.innerText = "Video is not supported";
+
+        const sourceElement = document.createElement('source');
+        sourceElement.src = photo.photoImageLink;
+
+        videoElement.appendChild(sourceElement);
+        photoDiv.appendChild(videoElement);
+        container.appendChild(photoDiv);
+    })
 }
 
 

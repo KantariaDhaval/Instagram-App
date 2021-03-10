@@ -14,7 +14,8 @@ body {
 
 button:focus,
 input:focus,
-select:focus {
+select:focus,
+video:focus {
     outline: none;
 }
 
