@@ -128,26 +128,39 @@ body {
 
 #handleName {
     font-size: 3.6rem;
-    font-weight: 200;
+    font-weight: 300;
     font-family: 'Raleway', sans-serif;
     margin-right: 1rem;
 }
 
-#editProfileBtn {
+.followBtn {
     font-size: 1.44rem;
     font-weight: 600;
-    padding:  0.64rem;
+    padding:  0.64rem 2rem;
     border-radius: 3px;
     background-color: #f5f5f5;
-    border: 1px solid #bbbbbb;
+    border: none;
     cursor: pointer;
-    margin-right: 1.6rem;
+    margin: 0 1rem;
+    color: white;
+    background-color: rgb(0, 132, 255);
 }
 
-#settingBtn {
-    font-size: 2.4rem;
-    background: transparent;
+.activeFollowBtn {
+    background-color: #e5e5e5;
+    color: black;
+}
+
+.followBtn:focus {
+    outline: none;
+}
+
+#dropdownBtn {
+    background-color: rgb(0, 132, 255);
+    color: white;
     border: none;
+    padding: 0.68rem 1rem;
+    border-radius: 3px;
     cursor: pointer;
 }
 

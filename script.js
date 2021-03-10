@@ -182,6 +182,8 @@ const posts = document.getElementById('posts');
 const igtv = document.getElementById('igtv');
 const saved = document.getElementById('saved');
 const tagged = document.getElementById('tagged');
+const followBtn = document.getElementById('followBtn');
+
 
 postsBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -223,6 +225,17 @@ taggedBtn.addEventListener('click', (e) => {
     // console.log(numberOfTagged);
 })
 
+followBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    followBtn.classList.toggle('activeFollowBtn');
+    if(followBtn.classList.contains('activeFollowBtn')) {
+        followBtn.innerText = "Unfollow";
+    } else {
+        followBtn.innerText = "Follow";
+    }
+})
+
 function addActiveClassToBtn(targetBtn) {
     postsBtn.classList.remove('active');
     igtvBtn.classList.remove('active');
@@ -239,4 +252,3 @@ function addHiddenClassToContainers(targetBtn) {
     tagged.classList.add('hidden');
 }
 
-// console.log(numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged);
