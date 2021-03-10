@@ -46,7 +46,10 @@
                     </li>
                     <li class="page">
                         <button class="pageIcon" id="profilePage">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYB1Oq6j2-N9HyYYqtjEbzYsbFmdtBdg-y1g&usqp=CAU" alt="Profile Photo" id="profilePhotoIcon">
+
+                            <img src="https://i.pinimg.com/236x/a0/4d/84/a04d849cf591c2f980548b982f461401.jpg" alt="Profile Photo" id="profilePhotoIcon">
+
+                            
                         </button>
                     </li>
                 </ul>
@@ -55,25 +58,11 @@
     </header>
     
     <div class="profile">
-        <div class="profileContainer">
-            <div class="profilePhoto">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYB1Oq6j2-N9HyYYqtjEbzYsbFmdtBdg-y1g&usqp=CAU" alt="Profile Photo" id="profilePhoto">
-            </div>
-            <div class="profileData">
-                <div class="handle">
-                    <div id="handleName"><h2>Dhaval Kantaria</h2></div>
-                    <button id="editProfileBtn">Edit Profile</button>
-                    <button id="settingBtn"><i class="fas fa-cog"></i></button>
-                </div>
-                <div class="accountDetails">
-                    <p class="accountDetailContainer"><span class="accountDetail" id="postsNumber">21</span>posts</p>
-                    <p class="accountDetailContainer"><span class="accountDetail" id="followers">500</span>followers</p>
-                    <p class="accountDetailContainer"><span class="accountDetail" id="following">500</span>following</p>
-                </div>
-                <div id="username">
-                    <h3>Dhaval Kantaria</h3>
-                </div>
-            </div>
+
+        <div class="profileContainer" id="profileContainer">
+            <!-- Profile data comes from JSON file -->
+
+
         </div>
     </div>
 
@@ -95,93 +84,17 @@
     </div>
 
     <div class="posts">
-        <div class="postsContainer">
-            <div class="postImage">
+
+        <div class="postsContainer" id="postsContainer">
+            
+            <!-- <div class="postImage">
                 <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-rolls-royce-ghost-vn.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
+                <div class="likesAndComments">
+                    <button class="postHoverBtn" id="likeBtn"><i class="postHoverIcon fas fa-heart"></i>200</button>
+                    <button class="postHoverBtn" id="commentBtn"><i class="postHoverIcon fas fa-comment"></i>20</button>
                 </div>
-            </div>      
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-toyota-gr-supra-a91-edition-5k-ni.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/2021-lamborghini-huracan-evo-8k-sw.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>          
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/mercedes-amg-gtr-4k-2021-q7.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>            
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/aston-martin-v12-zagato-heritage-coupe--and-zagato-heritage-speedster-5k-w6.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>            
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/download/h6-julietta-cgi-64-2880x1800.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>            
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/2018-aston-martin-db11-volante-c4.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>            
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/vision-gran-turismo-mercedes-benz.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>            
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/bentley-continental-gt-pikes-peak-2021-0a.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>            
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/bugatti-chiron-cgi-front-look-4k-91.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>
-
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/jaguar-vision-gran-turismo-sv-1900hp-car-4f.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>
-
-            <div class="postImage">
-                <img src="https://images.hdqwalls.com/wallpapers/thumb/lotus-evija-r5.jpg" alt="post" class="post">
-                <div class="likes">
-                    <button class="likeBtn"><i class="likeIcon fas fa-heart"></i>200</button>
-                    <button class="likeBtn"><i class="likeIcon fas fa-comment"></i>20</button>
-                </div>
-            </div>
+            </div>   -->
+            
 
             
         </div>
@@ -217,5 +130,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="postsData.JSON"></script>
+    <script src="script.js"></script>
 </body>
 </html>
