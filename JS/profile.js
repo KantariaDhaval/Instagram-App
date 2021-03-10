@@ -1,5 +1,5 @@
 async function fetchProfileData() {
-    await fetch('./profileData.JSON')
+    await fetch('./../JSON/profileData.JSON')
             .then((response) => response.json())
             .then((data) => {
                 showProfileData(data[0]);

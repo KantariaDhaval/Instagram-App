@@ -9,7 +9,7 @@ let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
 
 
 async function fetchPostData() {
-    await fetch('./postsData.JSON')
+    await fetch('./../JSON/postsData.JSON')
             .then((response) => response.json())
             .then((data) => {
                 numberOfPhotos.innerText = data.length;
@@ -19,7 +19,7 @@ async function fetchPostData() {
 }
 
 async function fetchIgtvData() {
-    await fetch('./igtvData.JSON')
+    await fetch('./../JSON/igtvData.JSON')
             .then((response) => response.json())
             .then((data) => {
                 numberOfIgtvs = data.length;
@@ -28,7 +28,7 @@ async function fetchIgtvData() {
 }
 
 async function fetchSavedData() {
-    await fetch('./savedData.JSON')
+    await fetch('./../JSON/savedData.JSON')
             .then((response) => response.json())
             .then((data) => {
                 numberOfSaved = data.length;
@@ -37,7 +37,7 @@ async function fetchSavedData() {
 }
 
 async function fetchTaggedData() {
-    await fetch('./taggedData.JSON')
+    await fetch('./../JSON/taggedData.JSON')
             .then((response) => response.json())
             .then((data) => {
                 numberOfTagged = data.length;
