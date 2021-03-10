@@ -33,7 +33,9 @@ body {
 }
 
 #appName {
+
     margin: 0.8rem 0;
+
     font-family: 'Lobster', cursive;
     font-family: 'Lobster Two', cursive;
     font-size: 2.7rem;
@@ -41,7 +43,9 @@ body {
 }
 
 #search {
+
     padding: 0.7rem 1rem;
+
     background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
     border-radius: 3px;
@@ -76,9 +80,11 @@ body {
 }
 
 #profilePage {
+
     padding-top: 1rem;
     max-width: 2.5rem;
     height: 3rem;
+
 }
 
 #profilePage img {
@@ -92,6 +98,7 @@ body {
 /************ PROFILES STYLES *************/
 
 .profile {
+
     margin: 5rem auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     width: 60%;
@@ -143,7 +150,9 @@ body {
 }
 
 #editProfileBtn {
+
     font-size: 1.44rem;
+
     font-weight: 600;
     padding:  0.64rem;
     border-radius: 3px;
@@ -154,7 +163,9 @@ body {
 }
 
 #settingBtn {
+
     font-size: 2.4rem;
+
     background: transparent;
     border: none;
     cursor: pointer;
@@ -255,7 +266,9 @@ body {
     transition: opacity .2s, visibility .2s;
 }
 
+
 .postHoverBtn {
+
     background: transparent;
     border: none;
     font-size: 1.9rem;
@@ -264,12 +277,14 @@ body {
     margin-right: 2rem;
 }
 
+
 .postHoverBtn:nth-child(2) {
     margin-right: 0;
 }
 
 .postHoverIcon {
     margin-right: 0.7rem;
+
     font-weight: 700;
 }
 
@@ -294,8 +309,10 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Roboto', sans-serif;
+
     font-size: 1.44rem;
     margin-bottom: 6rem;
+
 }
 
 #listsOfInfo {
@@ -337,6 +354,10 @@ body {
 #languages:hover {
     cursor: pointer;
     color: rgba(0, 0, 0, 0.8);
+}
+
+#languages:hover {
+    cursor: pointer;
 }
 
 #languages:focus {
