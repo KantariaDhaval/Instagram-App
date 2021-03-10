@@ -277,7 +277,12 @@ select:focus {
     margin-right: 0.7rem;
     font-weight: 700;
     pointer-events: none;
+    /* color: red; */
 }
+
+.activeLikeIcon {
+    color: red;
+} 
 
 .photoImage:hover {
     opacity: 0.7;

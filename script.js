@@ -6,6 +6,7 @@ const taggedContainer = document.getElementById("taggedContainer");
 const numberOfPhotos = document.getElementById('photosNumber');
 
 let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
+
 // FUNCTION FOR FETCHING PROFILE DATA 
 async function fetchProfileData() {
     await fetch('./profileData.JSON')
@@ -101,32 +102,36 @@ function showPostsData(photosData, container) {
         // LIKES WHEN HOVER
         const photoHoverLikeBtn = document.createElement("button");
         photoHoverLikeBtn.classList.add("photoHoverBtn");
+        photoHoverLikeBtn.id = "likeBtn" + photo.id;
         
         // ICON FOR LIKE
         const photoHoverLikeIcon = document.createElement("i");
         photoHoverLikeIcon.classList.add("photoHoverIcon");
         photoHoverLikeIcon.classList.add("fas");
         photoHoverLikeIcon.classList.add("fa-heart");
+        photoHoverLikeIcon.id = "likeIcon" + photo.id;
     
         // NUMBER OF LIKES
         const numberOfLikes = document.createElement("span");
         numberOfLikes.innerText = photo.numberOfLikes;
-        numberOfLikes.id = "numberOfLikes";
+        numberOfLikes.id = "numberOfLikes" + photo.id;
         
         // COMMENTS WHEN HOVER
         const photoHoverCommentBtn = document.createElement("button");
         photoHoverCommentBtn.classList.add("photoHoverBtn");
+        photoHoverCommentBtn.id = "commentBtn" + photo.id;
         
         // ICON FOR COMMENT
         const photoHoverCommentIcon = document.createElement("i");
         photoHoverCommentIcon.classList.add("photoHoverIcon");
         photoHoverCommentIcon.classList.add("fas");
         photoHoverCommentIcon.classList.add("fa-comment");
+        photoHoverCommentIcon.id = "commentIcon" + photo.id;
     
         // NUMBER OF COMMENTS
         const numberOfComments = document.createElement("span");
         numberOfComments.innerText = photo.numberOfComments;
-        numberOfComments.id = "numberOfComments";
+        numberOfComments.id = "numberOfComments" + photo.id;
         
         
         // **** APPEND ALL ELEMENTS TO THEIR PARENTS ****
@@ -141,8 +146,15 @@ function showPostsData(photosData, container) {
     
         photoDiv.appendChild(photoImage);
         photoDiv.appendChild(likesAndCommentsDiv);
-    
+        
         container.appendChild(photoDiv);
+
+
+        photoHoverLikeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            photoHoverLikeIcon.classList.toggle('activeLikeIcon');
+        })
     });
 }
 
@@ -158,6 +170,8 @@ const igtv = document.getElementById('igtv');
 const saved = document.getElementById('saved');
 const tagged = document.getElementById('tagged');
 const followBtn = document.getElementById('followBtn');
+// const likeBtn = document.getElementById('likeBtn');
+// const likeIcon = document.getElementById('likeIcon');
 
 
 postsBtn.addEventListener('click', (e) => {
@@ -206,6 +220,8 @@ followBtn.addEventListener('click', (e) => {
         followBtn.innerText = "Follow";
     }
 })
+
+
 
 function addActiveClassToBtn(targetBtn) {
     postsBtn.classList.remove('active');
