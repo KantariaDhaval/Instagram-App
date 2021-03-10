@@ -7,14 +7,6 @@ const numberOfPhotos = document.getElementById('photosNumber');
 
 let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
 
-// FUNCTION FOR FETCHING PROFILE DATA 
-async function fetchProfileData() {
-    await fetch('./profileData.JSON')
-            .then((response) => response.json())
-            .then((data) => {
-                showProfileData(data[0]);
-            });
-}
 
 async function fetchPostData() {
     await fetch('./postsData.JSON')
@@ -53,33 +45,12 @@ async function fetchTaggedData() {
             });
 }
 
-fetchProfileData();
 fetchPostData();
 fetchIgtvData();
 fetchSavedData();
 fetchTaggedData();
 
-function showProfileData(profileData) {
 
-    // PROFILE PHOTO ICON IN HEADER
-    const profilePhotoIcon = document.getElementById("profilePhotoIcon");
-    profilePhotoIcon.src = profileData.profilePhotoLink;
-
-    // SHOW ALL PROFILE CONTENT
-
-    const profilePhoto = document.getElementById('profilePhoto');
-    const handleName = document.getElementById('handleName');
-    const followers = document.getElementById('followers');
-    const following = document.getElementById('following');
-    const username = document.getElementById('username');
-
-    profilePhoto.src = profileData.profilePhotoLink;
-    handleName.innerText = profileData.handleName;
-    numberOfPhotos.innerText = profileData.numberOfPhotos;
-    followers.innerText = profileData.followers;
-    following.innerText = profileData.following;
-    username.innerText = profileData.username;
-}
 
 function showPostsData(photosData, container) {
     photosData.forEach(photo => {
@@ -161,81 +132,68 @@ function showPostsData(photosData, container) {
 
 // ******* EVENT LISTENERS *******
 
-const postsBtn = document.getElementById('postsBtn');
-const igtvBtn = document.getElementById('igtvBtn');
-const savedBtn = document.getElementById('savedBtn');
-const taggedBtn = document.getElementById('taggedBtn');
-const posts = document.getElementById('posts');
-const igtv = document.getElementById('igtv');
-const saved = document.getElementById('saved');
-const tagged = document.getElementById('tagged');
-const followBtn = document.getElementById('followBtn');
-// const likeBtn = document.getElementById('likeBtn');
-// const likeIcon = document.getElementById('likeIcon');
+// const postsBtn = document.getElementById('postsBtn');
+// const igtvBtn = document.getElementById('igtvBtn');
+// const savedBtn = document.getElementById('savedBtn');
+// const taggedBtn = document.getElementById('taggedBtn');
+// const posts = document.getElementById('posts');
+// const igtv = document.getElementById('igtv');
+// const saved = document.getElementById('saved');
+// const tagged = document.getElementById('tagged');
 
+// postsBtn.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-postsBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+//     addActiveClassToBtn(e.target);
+//     addHiddenClassToContainers(e.target);
+//     posts.classList.remove('hidden');
+//     numberOfPhotos.innerText = numberOfPosts;
+// })
 
-    addActiveClassToBtn(e.target);
-    addHiddenClassToContainers(e.target);
-    posts.classList.remove('hidden');
-    numberOfPhotos.innerText = numberOfPosts;
-})
+// igtvBtn.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-igtvBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+//     addActiveClassToBtn(e.target);
+//     addHiddenClassToContainers(e.target);
+//     igtv.classList.remove('hidden');
+//     numberOfPhotos.innerText = numberOfIgtvs;
+// })
 
-    addActiveClassToBtn(e.target);
-    addHiddenClassToContainers(e.target);
-    igtv.classList.remove('hidden');
-    numberOfPhotos.innerText = numberOfIgtvs;
-})
+// savedBtn.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-savedBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+//     addActiveClassToBtn(e.target);
+//     addHiddenClassToContainers(e.target);
+//     saved.classList.remove('hidden');
+//     numberOfPhotos.innerText = numberOfSaved;
+// })
 
-    addActiveClassToBtn(e.target);
-    addHiddenClassToContainers(e.target);
-    saved.classList.remove('hidden');
-    numberOfPhotos.innerText = numberOfSaved;
-})
+// taggedBtn.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-taggedBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    addActiveClassToBtn(e.target);
-    addHiddenClassToContainers(e.target);
-    tagged.classList.remove('hidden');
-    numberOfPhotos.innerText = numberOfTagged;
-})
-
-followBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    followBtn.classList.toggle('activeFollowBtn');
-    if(followBtn.classList.contains('activeFollowBtn')) {
-        followBtn.innerText = "Unfollow";
-    } else {
-        followBtn.innerText = "Follow";
-    }
-})
+//     addActiveClassToBtn(e.target);
+//     addHiddenClassToContainers(e.target);
+//     tagged.classList.remove('hidden');
+//     numberOfPhotos.innerText = numberOfTagged;
+// })
 
 
 
-function addActiveClassToBtn(targetBtn) {
-    postsBtn.classList.remove('active');
-    igtvBtn.classList.remove('active');
-    savedBtn.classList.remove('active');
-    taggedBtn.classList.remove('active');
 
-    targetBtn.classList.add('active');
-}
 
-function addHiddenClassToContainers(targetBtn) {
-    posts.classList.add('hidden');
-    igtv.classList.add('hidden');
-    saved.classList.add('hidden');
-    tagged.classList.add('hidden');
-}
+// function addActiveClassToBtn(targetBtn) {
+//     postsBtn.classList.remove('active');
+//     igtvBtn.classList.remove('active');
+//     savedBtn.classList.remove('active');
+//     taggedBtn.classList.remove('active');
+
+//     targetBtn.classList.add('active');
+// }
+
+// function addHiddenClassToContainers(targetBtn) {
+//     posts.classList.add('hidden');
+//     igtv.classList.add('hidden');
+//     saved.classList.add('hidden');
+//     tagged.classList.add('hidden');
+// }
 
