@@ -1,4 +1,5 @@
-let listOfInfos = [
+(function () {
+    let listOfInfos = [
     {
         "name": "About",
         "infoLink": ""
@@ -68,3 +69,6 @@ languages.forEach(language => {
 
     languagesContainer.appendChild(optionElement);
 })
+
+
+})();

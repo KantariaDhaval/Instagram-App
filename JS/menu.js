@@ -1,11 +1,15 @@
+// VARIABLES WHICH WILL BE USED IN ALL JS FILES
+const numberOfPhotos = document.getElementById('photosNumber');
+let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
+
+// IIFE
+(function () {
+
 const profileContainer = document.getElementById('profileContainer');
 const postsContainer = document.getElementById("postsContainer");
 const igtvContainer = document.getElementById("igtvContainer");
 const savedContainer = document.getElementById("savedContainer");
 const taggedContainer = document.getElementById("taggedContainer");
-const numberOfPhotos = document.getElementById('photosNumber');
-
-let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
 
 
 async function fetchPostData() {
@@ -128,3 +132,6 @@ function showPostsData(photosData, container) {
         })
     });
 }
+
+
+})();

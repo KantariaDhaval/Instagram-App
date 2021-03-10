@@ -1,3 +1,5 @@
+(function () {
+
 async function fetchProfileData() {
     await fetch('./../JSON/profileData.JSON')
             .then((response) => response.json())
@@ -42,3 +44,6 @@ followBtn.addEventListener('click', (e) => {
         followBtn.innerText = "Follow";
     }
 })
+
+
+})();

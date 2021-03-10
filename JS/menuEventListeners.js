@@ -1,4 +1,4 @@
-// ******* EVENT LISTENERS *******
+(function () {
 
 const postsBtn = document.getElementById('postsBtn');
 const igtvBtn = document.getElementById('igtvBtn');
@@ -65,3 +65,4 @@ function addHiddenClassToContainers(targetBtn) {
     tagged.classList.add('hidden');
 }
 
+})();
