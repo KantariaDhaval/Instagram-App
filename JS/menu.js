@@ -146,9 +146,67 @@ function showIgtvData(photosData, container) {
         const sourceElement = document.createElement('source');
         sourceElement.src = photo.photoImageLink;
 
+        const likesAndCommentsDiv = document.createElement("div");
+        likesAndCommentsDiv.classList.add("likesAndComments");
+    
+
+        // ***** POST HOVER CONTENT *****
+        // LIKES WHEN HOVER
+        const photoHoverLikeBtn = document.createElement("button");
+        photoHoverLikeBtn.classList.add("photoHoverBtn");
+        photoHoverLikeBtn.id = "likeBtn" + photo.id;
+        
+        // ICON FOR LIKE
+        const photoHoverLikeIcon = document.createElement("i");
+        photoHoverLikeIcon.classList.add("photoHoverIcon");
+        photoHoverLikeIcon.classList.add("fas");
+        photoHoverLikeIcon.classList.add("fa-heart");
+        photoHoverLikeIcon.id = "likeIcon" + photo.id;
+    
+        // NUMBER OF LIKES
+        const numberOfLikes = document.createElement("span");
+        numberOfLikes.innerText = photo.numberOfLikes;
+        numberOfLikes.id = "numberOfLikes" + photo.id;
+        
+        // COMMENTS WHEN HOVER
+        const photoHoverCommentBtn = document.createElement("button");
+        photoHoverCommentBtn.classList.add("photoHoverBtn");
+        photoHoverCommentBtn.id = "commentBtn" + photo.id;
+        
+        // ICON FOR COMMENT
+        const photoHoverCommentIcon = document.createElement("i");
+        photoHoverCommentIcon.classList.add("photoHoverIcon");
+        photoHoverCommentIcon.classList.add("fas");
+        photoHoverCommentIcon.classList.add("fa-comment");
+        photoHoverCommentIcon.id = "commentIcon" + photo.id;
+    
+        // NUMBER OF COMMENTS
+        const numberOfComments = document.createElement("span");
+        numberOfComments.innerText = photo.numberOfComments;
+        numberOfComments.id = "numberOfComments" + photo.id;
+        
+
+        photoHoverLikeBtn.appendChild(photoHoverLikeIcon);
+        photoHoverLikeBtn.appendChild(numberOfLikes);
+    
+        photoHoverCommentBtn.appendChild(photoHoverCommentIcon);
+        photoHoverCommentBtn.appendChild(numberOfComments);
+
+        likesAndCommentsDiv.appendChild(photoHoverLikeBtn);
+        likesAndCommentsDiv.appendChild(photoHoverCommentBtn);
+    
+
+        photoDiv.appendChild(likesAndCommentsDiv);
+        
         videoElement.appendChild(sourceElement);
         photoDiv.appendChild(videoElement);
         container.appendChild(photoDiv);
+
+        photoHoverLikeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            photoHoverLikeIcon.classList.toggle('activeLikeIcon');
+        })
     })
 }
 
