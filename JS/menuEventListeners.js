@@ -46,9 +46,6 @@ taggedBtn.addEventListener('click', (e) => {
 })
 
 
-
-
-
 function addActiveClassToBtn(targetBtn) {
     postsBtn.classList.remove('active');
     igtvBtn.classList.remove('active');
