@@ -89,7 +89,7 @@ video:focus {
     margin: 5rem auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     width: 60%;
-    height: 20rem;
+    height: 21rem;
     margin-bottom: 0;
 }
 
@@ -130,7 +130,7 @@ video:focus {
 }
 
 #handleName {
-    font-size: 3.6rem;
+    font-size: 3rem;
     font-weight: 300;
     font-family: 'Raleway', sans-serif;
     margin-right: 1rem;
@@ -168,21 +168,35 @@ video:focus {
 }
 .accountDetailContainer {
     font-family: 'Lato', sans-serif;
-    font-size: 1.76rem;
-    margin-right: 1.6rem;
+    font-size: 1.6rem;
+    margin-right: 4rem;
 }
 
 .accountDetail {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0.5rem;
 }
 
+#otherDetails {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
 #username {
-    font-size: 1.87rem;
     font-weight: 700;
 }
+
+#designation {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+#websiteLink {
+    color: rgb(0, 51, 109);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
 
 
 /*********** MENU STYLES *********/

@@ -150,6 +150,14 @@ function createAndAddLikeBtn(photo, container) {
         e.preventDefault();
 
         photoHoverLikeIcon.classList.toggle('activeLikeIcon');
+
+        let currentLikes = parseInt(numberOfLikes.innerText);
+        if(photoHoverLikeIcon.classList.contains('activeLikeIcon')) {
+            currentLikes++;
+        } else {
+            currentLikes--;
+        }
+        numberOfLikes.innerText = currentLikes;
     })
 }
 
@@ -178,6 +186,14 @@ function createAndAddCommentBtn(photo, container) {
         e.preventDefault();
 
         photoHoverCommentIcon.classList.toggle('activeCommentIcon');
+
+        let currentComments = parseInt(numberOfComments.innerText);
+        if(photoHoverCommentIcon.classList.contains('activeCommentIcon')) {
+            currentComments++;
+        } else {
+            currentComments--;
+        }  
+        numberOfComments.innerText = currentComments;      
     })
 }
 

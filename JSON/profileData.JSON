@@ -6,6 +6,9 @@
         "numberOfPhotos": 12,
         "followers": 500,
         "following": 500,
-        "username": "Dhaval Kantaria"
+        "username": "Dhaval Kantaria",
+        "designation": "SDE Intern at Tekion Corp",
+        "bio": "Dhaval Kantaria's bio",
+        "websiteLink": "bit.ly/3r1YGh9"
     }
 ]
