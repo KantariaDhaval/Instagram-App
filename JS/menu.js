@@ -138,7 +138,6 @@ function showIgtvData(photosData, container) {
         const photoDiv = document.createElement("div");
         photoDiv.classList.add("photoImage");
         
-
         const videoElement = document.createElement('video');
         videoElement.classList.add('photo');
         videoElement.controls = true;
