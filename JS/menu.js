@@ -63,73 +63,20 @@ function showPhotosData(photosData, container) {
         photoDiv.classList.add("photoImage");
         
         // POST IMAGE
-        const photoImage = document.createElement("img");
-        photoImage.classList.add("photo");
-        photoImage.src = photo.photoImageLink;
-        photoImage.alt = photo.alt;
-    
+        createAndAddImage(photo, photoDiv);
+        
         // SHOW LIKES AND COMMENTS WHEN HOVER ON IMAGE
         const likesAndCommentsDiv = document.createElement("div");
         likesAndCommentsDiv.classList.add("likesAndComments");
     
 
-        // ***** POST HOVER CONTENT *****
-        // LIKES WHEN HOVER
-        const photoHoverLikeBtn = document.createElement("button");
-        photoHoverLikeBtn.classList.add("photoHoverBtn");
-        photoHoverLikeBtn.id = "likeBtn" + photo.id;
+        createAndAddLikeBtn(photo, likesAndCommentsDiv);
         
-        // ICON FOR LIKE
-        const photoHoverLikeIcon = document.createElement("i");
-        photoHoverLikeIcon.classList.add("photoHoverIcon");
-        photoHoverLikeIcon.classList.add("fas");
-        photoHoverLikeIcon.classList.add("fa-heart");
-        photoHoverLikeIcon.id = "likeIcon" + photo.id;
-    
-        // NUMBER OF LIKES
-        const numberOfLikes = document.createElement("span");
-        numberOfLikes.innerText = photo.numberOfLikes;
-        numberOfLikes.id = "numberOfLikes" + photo.id;
+        createAndAddCommentBtn(photo, likesAndCommentsDiv);
         
-        // COMMENTS WHEN HOVER
-        const photoHoverCommentBtn = document.createElement("button");
-        photoHoverCommentBtn.classList.add("photoHoverBtn");
-        photoHoverCommentBtn.id = "commentBtn" + photo.id;
-        
-        // ICON FOR COMMENT
-        const photoHoverCommentIcon = document.createElement("i");
-        photoHoverCommentIcon.classList.add("photoHoverIcon");
-        photoHoverCommentIcon.classList.add("fas");
-        photoHoverCommentIcon.classList.add("fa-comment");
-        photoHoverCommentIcon.id = "commentIcon" + photo.id;
-    
-        // NUMBER OF COMMENTS
-        const numberOfComments = document.createElement("span");
-        numberOfComments.innerText = photo.numberOfComments;
-        numberOfComments.id = "numberOfComments" + photo.id;
-        
-        
-        // **** APPEND ALL ELEMENTS TO THEIR PARENTS ****
-        photoHoverLikeBtn.appendChild(photoHoverLikeIcon);
-        photoHoverLikeBtn.appendChild(numberOfLikes);
-    
-        photoHoverCommentBtn.appendChild(photoHoverCommentIcon);
-        photoHoverCommentBtn.appendChild(numberOfComments);
-
-        likesAndCommentsDiv.appendChild(photoHoverLikeBtn);
-        likesAndCommentsDiv.appendChild(photoHoverCommentBtn);
-    
-        photoDiv.appendChild(photoImage);
         photoDiv.appendChild(likesAndCommentsDiv);
         
         container.appendChild(photoDiv);
-
-
-        photoHoverLikeBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            photoHoverLikeIcon.classList.toggle('activeLikeIcon');
-        })
     });
 }
 
@@ -138,77 +85,100 @@ function showIgtvData(photosData, container) {
         const photoDiv = document.createElement("div");
         photoDiv.classList.add("photoImage");
         
-        const videoElement = document.createElement('video');
-        videoElement.classList.add('photo');
-        videoElement.controls = true;
-        videoElement.innerText = "Video is not supported";
-
-        const sourceElement = document.createElement('source');
-        sourceElement.src = photo.photoImageLink;
-
+        // IGTV VIDEO
+        createAndAddVideo(photo, photoDiv);
+        
+        // SHOW LIKES AND COMMENTS WHEN HOVER ON IMAGE
         const likesAndCommentsDiv = document.createElement("div");
         likesAndCommentsDiv.classList.add("likesAndComments");
     
-
-        // ***** POST HOVER CONTENT *****
-        // LIKES WHEN HOVER
-        const photoHoverLikeBtn = document.createElement("button");
-        photoHoverLikeBtn.classList.add("photoHoverBtn");
-        photoHoverLikeBtn.id = "likeBtn" + photo.id;
+        createAndAddLikeBtn(photo, likesAndCommentsDiv);
         
-        // ICON FOR LIKE
-        const photoHoverLikeIcon = document.createElement("i");
-        photoHoverLikeIcon.classList.add("photoHoverIcon");
-        photoHoverLikeIcon.classList.add("fas");
-        photoHoverLikeIcon.classList.add("fa-heart");
-        photoHoverLikeIcon.id = "likeIcon" + photo.id;
-    
-        // NUMBER OF LIKES
-        const numberOfLikes = document.createElement("span");
-        numberOfLikes.innerText = photo.numberOfLikes;
-        numberOfLikes.id = "numberOfLikes" + photo.id;
-        
-        // COMMENTS WHEN HOVER
-        const photoHoverCommentBtn = document.createElement("button");
-        photoHoverCommentBtn.classList.add("photoHoverBtn");
-        photoHoverCommentBtn.id = "commentBtn" + photo.id;
-        
-        // ICON FOR COMMENT
-        const photoHoverCommentIcon = document.createElement("i");
-        photoHoverCommentIcon.classList.add("photoHoverIcon");
-        photoHoverCommentIcon.classList.add("fas");
-        photoHoverCommentIcon.classList.add("fa-comment");
-        photoHoverCommentIcon.id = "commentIcon" + photo.id;
-    
-        // NUMBER OF COMMENTS
-        const numberOfComments = document.createElement("span");
-        numberOfComments.innerText = photo.numberOfComments;
-        numberOfComments.id = "numberOfComments" + photo.id;
-        
-
-        photoHoverLikeBtn.appendChild(photoHoverLikeIcon);
-        photoHoverLikeBtn.appendChild(numberOfLikes);
-    
-        photoHoverCommentBtn.appendChild(photoHoverCommentIcon);
-        photoHoverCommentBtn.appendChild(numberOfComments);
-
-        likesAndCommentsDiv.appendChild(photoHoverLikeBtn);
-        likesAndCommentsDiv.appendChild(photoHoverCommentBtn);
-    
+        createAndAddCommentBtn(photo, likesAndCommentsDiv);
 
         photoDiv.appendChild(likesAndCommentsDiv);
         
-        videoElement.appendChild(sourceElement);
-        photoDiv.appendChild(videoElement);
         container.appendChild(photoDiv);
-
-        photoHoverLikeBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            photoHoverLikeIcon.classList.toggle('activeLikeIcon');
-        })
     })
 }
 
+
+function createAndAddImage(photo, container) {
+    const photoImage = document.createElement("img");
+    photoImage.classList.add("photo");
+    photoImage.src = photo.photoImageLink;
+    photoImage.alt = photo.alt;
+    
+    container.appendChild(photoImage);
+}
+
+function createAndAddVideo(photo, container) {
+    const videoElement = document.createElement('video');
+    videoElement.classList.add('photo');
+    videoElement.controls = true;
+    videoElement.innerText = "Video is not supported";
+
+    const sourceElement = document.createElement('source');
+    sourceElement.src = photo.photoImageLink;
+
+    videoElement.appendChild(sourceElement);
+    container.appendChild(videoElement);
+}
+
+function createAndAddLikeBtn(photo, container) {
+    const photoHoverLikeBtn = document.createElement("button");
+    photoHoverLikeBtn.classList.add("photoHoverBtn");
+    photoHoverLikeBtn.id = "likeBtn" + photo.id;
+    
+    // ICON FOR LIKE
+    const photoHoverLikeIcon = document.createElement("i");
+    photoHoverLikeIcon.classList.add("photoHoverIcon");
+    photoHoverLikeIcon.classList.add("fas");
+    photoHoverLikeIcon.classList.add("fa-heart");
+    photoHoverLikeIcon.id = "likeIcon" + photo.id;
+
+    // NUMBER OF LIKES
+    const numberOfLikes = document.createElement("span");
+    numberOfLikes.innerText = photo.numberOfLikes;
+    numberOfLikes.id = "numberOfLikes" + photo.id;
+
+    photoHoverLikeBtn.appendChild(photoHoverLikeIcon);
+    photoHoverLikeBtn.appendChild(numberOfLikes);
+    container.appendChild(photoHoverLikeBtn);
+
+    photoHoverLikeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        photoHoverLikeIcon.classList.toggle('activeLikeIcon');
+    })
+}
+
+function createAndAddCommentBtn(photo, container) {
+    const photoHoverCommentBtn = document.createElement("button");
+    photoHoverCommentBtn.classList.add("photoHoverBtn");
+    photoHoverCommentBtn.id = "commentBtn" + photo.id;
+    
+    // ICON FOR COMMENT
+    const photoHoverCommentIcon = document.createElement("i");
+    photoHoverCommentIcon.classList.add("photoHoverIcon");
+    photoHoverCommentIcon.classList.add("fas");
+    photoHoverCommentIcon.classList.add("fa-comment");
+    photoHoverCommentIcon.id = "commentIcon" + photo.id;
+
+    // NUMBER OF COMMENTS
+    const numberOfComments = document.createElement("span");
+    numberOfComments.innerText = photo.numberOfComments;
+    numberOfComments.id = "numberOfComments" + photo.id;
+    
+    photoHoverCommentBtn.appendChild(photoHoverCommentIcon);
+    photoHoverCommentBtn.appendChild(numberOfComments);
+    container.appendChild(photoHoverCommentBtn);
+
+    photoHoverCommentBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        photoHoverCommentIcon.classList.toggle('activeCommentIcon');
+    })
+}
 
 })();
