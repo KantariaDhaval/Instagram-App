@@ -1,84 +1,84 @@
 [
     {
         "id": 1,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-rolls-royce-ghost-vn.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-rolls-royce-ghost-vn.jpg",
         "alt": "Post Image 1",
         "numberOfLikes": 100,
         "numberOfComments": 10
     },
     {
         "id": 2,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-toyota-gr-supra-a91-edition-5k-ni.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-toyota-gr-supra-a91-edition-5k-ni.jpg",
         "alt": "Post Image 2",
         "numberOfLikes": 200,
         "numberOfComments": 20
     },
     {
         "id": 3,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-lamborghini-huracan-evo-8k-sw.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-lamborghini-huracan-evo-8k-sw.jpg",
         "alt": "Post Image 3",
         "numberOfLikes": 300,
         "numberOfComments": 30
     },
     {
         "id": 4,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/mercedes-amg-gtr-4k-2021-q7.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/mercedes-amg-gtr-4k-2021-q7.jpg",
         "alt": "Post Image 4",
         "numberOfLikes": 400,
         "numberOfComments": 40
     },
     {
         "id": 5,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/aston-martin-v12-zagato-heritage-coupe--and-zagato-heritage-speedster-5k-w6.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/aston-martin-v12-zagato-heritage-coupe--and-zagato-heritage-speedster-5k-w6.jpg",
         "alt": "Post Image 5",
         "numberOfLikes": 500,
         "numberOfComments": 50
     },
     {
         "id": 6,
-        "postImageLink": "https://images.hdqwalls.com/download/h6-julietta-cgi-64-2880x1800.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/download/h6-julietta-cgi-64-2880x1800.jpg",
         "alt": "Post Image 6",
         "numberOfLikes": 600,
         "numberOfComments": 60
     },
     {
         "id": 7,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2018-aston-martin-db11-volante-c4.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2018-aston-martin-db11-volante-c4.jpg",
         "alt": "Post Image 7",
         "numberOfLikes": 700,
         "numberOfComments": 70
     },
     {
         "id": 8,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/vision-gran-turismo-mercedes-benz.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/vision-gran-turismo-mercedes-benz.jpg",
         "alt": "Post Image 8",
         "numberOfLikes": 800,
         "numberOfComments": 80
     },
     {
         "id": 9,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/bentley-continental-gt-pikes-peak-2021-0a.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/bentley-continental-gt-pikes-peak-2021-0a.jpg",
         "alt": "Post Image 9",
         "numberOfLikes": 900,
         "numberOfComments": 90
     },
     {
         "id": 10,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/bugatti-chiron-cgi-front-look-4k-91.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/bugatti-chiron-cgi-front-look-4k-91.jpg",
         "alt": "Post Image 10",
         "numberOfLikes": 1000,
         "numberOfComments": 100
     },
     {
         "id": 11,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/jaguar-vision-gran-turismo-sv-1900hp-car-4f.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/jaguar-vision-gran-turismo-sv-1900hp-car-4f.jpg",
         "alt": "Post Image 11",
         "numberOfLikes": 1100,
         "numberOfComments": 110
     },
     {
         "id": 12,
-        "postImageLink": "https://images.hdqwalls.com/wallpapers/thumb/lotus-evija-r5.jpg",
+        "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/lotus-evija-r5.jpg",
         "alt": "Post Image 12",
         "numberOfLikes": 1200,
         "numberOfComments": 120
