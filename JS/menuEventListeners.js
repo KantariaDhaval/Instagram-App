@@ -9,36 +9,28 @@ const igtv = document.getElementById('igtv');
 const saved = document.getElementById('saved');
 const tagged = document.getElementById('tagged');
 
-postsBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
+postsBtn.addEventListener('click', () => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     posts.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfPosts;
 })
 
-igtvBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
+igtvBtn.addEventListener('click', () => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     igtv.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfIgtvs;
 })
 
-savedBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
+savedBtn.addEventListener('click', () => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     saved.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfSaved;
 })
 
-taggedBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
+taggedBtn.addEventListener('click', () => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     tagged.classList.remove('hidden');
