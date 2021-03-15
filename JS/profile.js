@@ -1,10 +1,11 @@
 (function () {
 
 async function fetchProfileData() {
-    await fetch('./../JSON/profileData.JSON')
+    await fetch('./../JSON/Data.JSON')
             .then((response) => response.json())
             .then((data) => {
-                showProfileData(data[0]);
+                console.log(data);
+                showProfileData(data.profileData);
             });
 }
 

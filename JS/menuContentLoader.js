@@ -12,47 +12,23 @@ const savedContainer = document.getElementById("savedContainer");
 const taggedContainer = document.getElementById("taggedContainer");
 
 
-async function fetchPostData() {
-    await fetch('./../JSON/postsData.JSON')
+async function fetchData() {
+    await fetch('./../JSON/Data.JSON')
             .then((response) => response.json())
             .then((data) => {
-                numberOfPhotos.innerText = data.length;
-                numberOfPosts = data.length;
-                showPhotosData(data, postsContainer);
+                numberOfPhotos.innerText = data.postsData.length;
+                numberOfPosts = data.postsData.length;
+                numberOfIgtvs = data.igtvData.length;
+                numberOfSaved = data.savedData.length;
+                numberOfTagged = data.taggedData.length;
+                showPhotosData(data.postsData, postsContainer);
+                showIgtvData(data.igtvData, igtvContainer);
+                showPhotosData(data.savedData, savedContainer);
+                showPhotosData(data.taggedData, taggedContainer);
             });
 }
 
-async function fetchIgtvData() {
-    await fetch('./../JSON/igtvData.JSON')
-            .then((response) => response.json())
-            .then((data) => {
-                numberOfIgtvs = data.length;
-                showIgtvData(data, igtvContainer);
-            });
-}
-
-async function fetchSavedData() {
-    await fetch('./../JSON/savedData.JSON')
-            .then((response) => response.json())
-            .then((data) => {
-                numberOfSaved = data.length;
-                showPhotosData(data, savedContainer);
-            });
-}
-
-async function fetchTaggedData() {
-    await fetch('./../JSON/taggedData.JSON')
-            .then((response) => response.json())
-            .then((data) => {
-                numberOfTagged = data.length;
-                showPhotosData(data, taggedContainer);
-            });
-}
-
-fetchPostData();
-fetchIgtvData();
-fetchSavedData();
-fetchTaggedData();
+fetchData();
 
 
 function showPhotosData(photosData, container) {
