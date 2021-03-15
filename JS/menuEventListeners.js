@@ -9,28 +9,28 @@ const igtv = document.getElementById('igtv');
 const saved = document.getElementById('saved');
 const tagged = document.getElementById('tagged');
 
-postsBtn.addEventListener('click', () => {
+postsBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     posts.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfPosts;
 })
 
-igtvBtn.addEventListener('click', () => {
+igtvBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     igtv.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfIgtvs;
 })
 
-savedBtn.addEventListener('click', () => {
+savedBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     saved.classList.remove('hidden');
     numberOfPhotos.innerText = numberOfSaved;
 })
 
-taggedBtn.addEventListener('click', () => {
+taggedBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     tagged.classList.remove('hidden');
