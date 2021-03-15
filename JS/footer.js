@@ -45,21 +45,12 @@
 let languages = ["English", "English-UK", "French", "Spanish", "German", "Hindi", "Gujarati"];
 
 const listsOfInfoContainer = document.getElementById('listsOfInfo');
-const languagesContainer = document.getElementById('languages');
+const languagesContainer = document.getElementById('selectLanguages');
 
 listOfInfos.forEach(info => {
-    const listElement = document.createElement('li');
-    listElement.classList.add('infoPage');
-    listElement.id = info.name;
+    const listElement = createAndAddListElement(info, listsOfInfoContainer);
 
-    const linkElement = document.createElement('a');
-    linkElement.classList.add('infoPageLink');
-    linkElement.href = info.infoLink;
-    linkElement.innerText = info.name;
-
-
-    listElement.appendChild(linkElement);
-    listsOfInfoContainer.appendChild(listElement);
+    createAndAddLinkElement(info, listElement);
 })
 
 languages.forEach(language => {
@@ -69,6 +60,24 @@ languages.forEach(language => {
 
     languagesContainer.appendChild(optionElement);
 })
+
+function createAndAddListElement(info, container) {
+    const listElement = document.createElement('li');
+    listElement.classList.add('infoPage');
+    listElement.id = info.name;
+
+    container.appendChild(listElement);
+    return listElement;
+}
+
+function createAndAddLinkElement(info, container) {
+    const linkElement = document.createElement('a');
+    linkElement.classList.add('infoPageLink');
+    linkElement.href = info.infoLink;
+    linkElement.innerText = info.name;
+
+    container.appendChild(linkElement);
+}
 
 
 })();

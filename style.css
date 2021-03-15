@@ -21,7 +21,7 @@ video:focus {
 
 /********* HEADER STYLES *********/
 
-.header {
+#header {
     width: 100%;
     position: fixed;
     top: 0;
@@ -31,7 +31,7 @@ video:focus {
     z-index: 5;
 }
 
-.headerContainer {
+#headerContainer {
     width: 60%;
     margin: 0 auto;
     display: flex;
@@ -40,9 +40,7 @@ video:focus {
 }
 
 #appName {
-
     margin: 0.8rem 0;
-
     font-family: 'Lobster', cursive;
     font-family: 'Lobster Two', cursive;
     font-size: 2.7rem;
@@ -50,9 +48,7 @@ video:focus {
 }
 
 #search {
-
     padding: 0.7rem 1rem;
-
     background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
     border-radius: 3px;
@@ -89,7 +85,7 @@ video:focus {
 
 /************ PROFILES STYLES *************/
 
-.profile {
+#profile {
 
     margin: 5rem auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
@@ -98,7 +94,7 @@ video:focus {
     margin-bottom: 0;
 }
 
-.profileContainer {
+#profileContainer {
     width: 90%;
     height: 100%;
     margin: auto;
@@ -106,7 +102,7 @@ video:focus {
     align-items: center;
 }
 
-.profilePhoto {
+#profilePhoto {
     max-width: 15rem;
     height: 15rem;
     border-radius: 50%;
@@ -115,13 +111,13 @@ video:focus {
     margin-left: 1.6rem;
 }
 
-#profilePhoto {
+#profilePhotoImage {
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
 
-.profileData {
+#profileData {
     height: 100%;
     flex: 1;
     display: flex;
@@ -129,7 +125,7 @@ video:focus {
     justify-content: space-evenly;
 }
 
-.handle {
+#handle {
     display: flex;
     align-items: center;
 }
@@ -141,10 +137,8 @@ video:focus {
     margin-right: 1rem;
 }
 
-
 .followBtn {
     font-size: 1.44rem;
-
     font-weight: 600;
     padding:  0.64rem 2rem;
     border-radius: 3px;
@@ -155,7 +149,6 @@ video:focus {
     color: white;
     background-color: rgb(0, 132, 255);
 }
-
 
 .messageBtn {
     background-color: #e5e5e5;
@@ -181,7 +174,7 @@ video:focus {
     color: black;
 }
 
-.accountDetails {
+#accountDetails {
     display: flex;
 }
 .accountDetailContainer {
@@ -218,12 +211,12 @@ video:focus {
 
 
 /*********** MENU STYLES *********/
-.menu {
+#menu {
     width: 60%;
     margin: 0 auto;
 }
 
-.menuContainer {
+#menuContainer {
     width: 50%;
     margin: 0 auto;
     display: flex;
@@ -277,7 +270,6 @@ video:focus {
     height: 34rem;
 }
 
-
 .likesAndComments {
     position: absolute;
     top: 47%;
@@ -292,7 +284,6 @@ video:focus {
 }
 
 .photoHoverBtn {
-
     background: transparent;
     border: none;
     font-size: 1.9rem;
@@ -302,17 +293,14 @@ video:focus {
     cursor: pointer;
 }
 
-
 .phoHoverBtn:nth-child(2) {
     margin-right: 0;
 }
 
 .photoHoverIcon {
     margin-right: 0.7rem;
-
     font-weight: 700;
     pointer-events: none;
-    /* color: red; */
 }
 
 .activeLikeIcon {
@@ -338,28 +326,24 @@ video:focus {
 
 /*********** FOOTER STYLES **********/
 
-.footerContainer {
+#footerContainer {
     width: 60%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-
     font-size: 1.44rem;
     margin-bottom: 6rem;
-
 }
 
 #listsOfInfo {
     list-style: none;
-    
 }
 
 .infoPage {
     display: inline-block;
     margin-left: 2rem;
-    
 }
 
 .infoPageLink {
@@ -375,19 +359,19 @@ video:focus {
     margin-left: 0;
 }
 
-.languages {
+#languages {
     display: flex;
     margin-top: 2rem;
 }
 
-#languages {
+#selectLanguages {
     background-color: transparent;
     border: none;
     color: rgba(0, 0, 0, 0.5);
     margin-right: 2.5rem;
 }
 
-#languages:hover {
+#selectLanguages:hover {
     cursor: pointer;
     color: rgba(0, 0, 0, 0.8);
 }

@@ -55,53 +55,49 @@ fetchSavedData();
 fetchTaggedData();
 
 
-
 function showPhotosData(photosData, container) {
     photosData.forEach(photo => {
-        // POST CONTAINER
-        const photoDiv = document.createElement("div");
-        photoDiv.classList.add("photoImage");
+        const photoDiv = createAndAddPostContainer(container);
         
-        // POST IMAGE
         createAndAddImage(photo, photoDiv);
         
-        // SHOW LIKES AND COMMENTS WHEN HOVER ON IMAGE
-        const likesAndCommentsDiv = document.createElement("div");
-        likesAndCommentsDiv.classList.add("likesAndComments");
+        const likesAndCommentsDiv = createAndAddLikeAndCommentContainer(photoDiv);
     
-
         createAndAddLikeBtn(photo, likesAndCommentsDiv);
         
         createAndAddCommentBtn(photo, likesAndCommentsDiv);
-        
-        photoDiv.appendChild(likesAndCommentsDiv);
-        
-        container.appendChild(photoDiv);
     });
 }
 
 function showIgtvData(photosData, container) {
     photosData.forEach(photo => {
-        const photoDiv = document.createElement("div");
-        photoDiv.classList.add("photoImage");
+        const photoDiv = createAndAddPostContainer(container);
         
-        // IGTV VIDEO
         createAndAddVideo(photo, photoDiv);
         
-        // SHOW LIKES AND COMMENTS WHEN HOVER ON IMAGE
-        const likesAndCommentsDiv = document.createElement("div");
-        likesAndCommentsDiv.classList.add("likesAndComments");
+        const likesAndCommentsDiv = createAndAddLikeAndCommentContainer(photoDiv);
     
         createAndAddLikeBtn(photo, likesAndCommentsDiv);
         
         createAndAddCommentBtn(photo, likesAndCommentsDiv);
-
-        photoDiv.appendChild(likesAndCommentsDiv);
-        
-        container.appendChild(photoDiv);
     })
 }
 
+function createAndAddPostContainer(container) {
+    const photoDiv = document.createElement("div");
+    photoDiv.classList.add("photoImage");
+
+    container.appendChild(photoDiv);
+    return photoDiv;
+}
+
+function createAndAddLikeAndCommentContainer(container) {
+    const likesAndCommentsDiv = document.createElement("div");
+    likesAndCommentsDiv.classList.add("likesAndComments");
+    
+    container.appendChild(likesAndCommentsDiv);
+    return likesAndCommentsDiv;
+}
 
 function createAndAddImage(photo, container) {
     const photoImage = document.createElement("img");
@@ -130,35 +126,37 @@ function createAndAddLikeBtn(photo, container) {
     photoHoverLikeBtn.classList.add("photoHoverBtn");
     photoHoverLikeBtn.id = "likeBtn" + photo.id;
     
-    // ICON FOR LIKE
+    const photoHoverLikeIcon = createAndAddLikeIcon(photo, photoHoverLikeBtn);
+    
+    const numberOfLikes = createAndAddLikeCountSpan(photo, photoHoverLikeBtn);
+
+    container.appendChild(photoHoverLikeBtn);
+
+    photoHoverLikeBtn.addEventListener('click', () => {
+        photoHoverLikeIcon.classList.toggle('activeLikeIcon');
+
+        updateCount(numberOfLikes, photoHoverLikeIcon, 'activeLikeIcon');
+    })
+}
+
+function createAndAddLikeIcon(photo, container) {
     const photoHoverLikeIcon = document.createElement("i");
     photoHoverLikeIcon.classList.add("photoHoverIcon");
     photoHoverLikeIcon.classList.add("fas");
     photoHoverLikeIcon.classList.add("fa-heart");
     photoHoverLikeIcon.id = "likeIcon" + photo.id;
 
-    // NUMBER OF LIKES
+    container.appendChild(photoHoverLikeIcon);
+    return photoHoverLikeIcon;
+}
+
+function createAndAddLikeCountSpan(photo, container) {
     const numberOfLikes = document.createElement("span");
     numberOfLikes.innerText = photo.numberOfLikes;
     numberOfLikes.id = "numberOfLikes" + photo.id;
 
-    photoHoverLikeBtn.appendChild(photoHoverLikeIcon);
-    photoHoverLikeBtn.appendChild(numberOfLikes);
-    container.appendChild(photoHoverLikeBtn);
-
-    photoHoverLikeBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        photoHoverLikeIcon.classList.toggle('activeLikeIcon');
-
-        let currentLikes = parseInt(numberOfLikes.innerText);
-        if(photoHoverLikeIcon.classList.contains('activeLikeIcon')) {
-            currentLikes++;
-        } else {
-            currentLikes--;
-        }
-        numberOfLikes.innerText = currentLikes;
-    })
+    container.appendChild(numberOfLikes);
+    return numberOfLikes;
 }
 
 function createAndAddCommentBtn(photo, container) {
@@ -166,35 +164,47 @@ function createAndAddCommentBtn(photo, container) {
     photoHoverCommentBtn.classList.add("photoHoverBtn");
     photoHoverCommentBtn.id = "commentBtn" + photo.id;
     
-    // ICON FOR COMMENT
+    const photoHoverCommentIcon = createAndAddCommentIcon(photo, photoHoverCommentBtn);
+
+    const numberOfComments = createAndAddcommentCountSpan(photo, photoHoverCommentBtn);
+    
+    container.appendChild(photoHoverCommentBtn);
+
+    photoHoverCommentBtn.addEventListener('click', () => {
+        photoHoverCommentIcon.classList.toggle('activeCommentIcon');
+
+        updateCount(numberOfComments, photoHoverCommentIcon, 'activeCommentIcon');      
+    })
+}
+
+function createAndAddCommentIcon(photo, container) {
     const photoHoverCommentIcon = document.createElement("i");
     photoHoverCommentIcon.classList.add("photoHoverIcon");
     photoHoverCommentIcon.classList.add("fas");
     photoHoverCommentIcon.classList.add("fa-comment");
     photoHoverCommentIcon.id = "commentIcon" + photo.id;
 
-    // NUMBER OF COMMENTS
+    container.appendChild(photoHoverCommentIcon);
+    return photoHoverCommentIcon;
+}
+
+function createAndAddcommentCountSpan(photo, container) {
     const numberOfComments = document.createElement("span");
     numberOfComments.innerText = photo.numberOfComments;
     numberOfComments.id = "numberOfComments" + photo.id;
     
-    photoHoverCommentBtn.appendChild(photoHoverCommentIcon);
-    photoHoverCommentBtn.appendChild(numberOfComments);
-    container.appendChild(photoHoverCommentBtn);
+    container.appendChild(numberOfComments);
+    return numberOfComments;
+}
 
-    photoHoverCommentBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        photoHoverCommentIcon.classList.toggle('activeCommentIcon');
-
-        let currentComments = parseInt(numberOfComments.innerText);
-        if(photoHoverCommentIcon.classList.contains('activeCommentIcon')) {
-            currentComments++;
-        } else {
-            currentComments--;
-        }  
-        numberOfComments.innerText = currentComments;      
-    })
+function updateCount(currentCount, countElement, checkClass) {
+    let count = parseInt(currentCount.innerText);
+    if(countElement.classList.contains(checkClass)) {
+        count++;
+    } else {
+        count--;
+    }
+    currentCount.innerText = count;
 }
 
 })();

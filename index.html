@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-</head>
+</head> 
 <body>
-    <header class="header">
-        <div class="headerContainer">
+    <header id="header">
+        <div id="headerContainer">
             <h2 id="appName">Instagram</h2>
             <input type="text" id="search" placeholder='&#xF002; Search'>     
-            <div class="pages">
+            <div id="pages">
                 <button class="pageIcon" id="homePage">
                     <i class="fas fa-home"></i>
                 </button>
@@ -43,16 +43,17 @@
         </div>
     </header>
     
-    <div class="profile">
-
-        <div class="profileContainer" id="profileContainer">
+    <div id="profile">
+        <div id="profileContainer">
             <!-- Profile data comes from JSON file -->
-            <div class="profilePhoto">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYB1Oq6j2-N9HyYYqtjEbzYsbFmdtBdg-y1g&usqp=CAU" id="profilePhoto" alt="Profile Photo">
+            <div id="profilePhoto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYB1Oq6j2-N9HyYYqtjEbzYsbFmdtBdg-y1g&usqp=CAU" id="profilePhotoImage" alt="Profile Photo">
             </div>
-            <div class="profileData">
-                <div class="handle">
-                    <div id="handleName"><h2>Dhaval Kantaria</h2></div>
+            <div id="profileData">
+                <div id="handle">
+                    <div id="handleName">
+                        <h2>Dhaval Kantaria</h2>
+                    </div>
                     <button class="followBtn" id="followBtn">
                         Follow
                     </button>
@@ -63,7 +64,7 @@
                         <i class="fas fa-caret-down"></i>
                     </button>
                 </div>
-                <div class="accountDetails">
+                <div id="accountDetails">
                     <p class="accountDetailContainer">
                         <span class="accountDetail" id="photosNumber">
                             1
@@ -103,8 +104,8 @@
         </div>
     </div>
 
-    <div class="menu">
-        <div class="menuContainer">
+    <div id="menu">
+        <div id="menuContainer">
             <button class="menuPage active" id="postsBtn">
                 <i class="fas fa-th menuIcon"></i>
                 POSTS
@@ -178,8 +179,8 @@
     </div>
 
     <footer>
-        <div class="footerContainer">
-            <div class="siteInfo">
+        <div id="footerContainer">
+            <div id="siteInfo">
                 <ul id="listsOfInfo">
                     <!-- <li class="infoPage" id="about">
                         <a href="" class="infoPageLink">
@@ -188,8 +189,8 @@
                     </li> -->
                 </ul>
             </div>
-            <div class="languages">
-                <select name="languages" id="languages">
+            <div id="languages">
+                <select name="languages" id="selectLanguages">
                     <!-- <option value="english">English</option> -->
                 </select>
                 <p id="copyright">&copy; 2021 Instagram from Facebook</p>
