@@ -169,9 +169,17 @@ video:focus {
     cursor: pointer;
 }
 
+.followBtn:hover {
+    background-color: rgb(0, 100, 255);
+}
+
 .activeFollowBtn {
     background-color: #e5e5e5;
     color: black;
+}
+
+.activeFollowBtn:hover {
+    background-color: #cccccc;
 }
 
 #accountDetails {
@@ -238,9 +246,14 @@ video:focus {
     pointer-events: none;
 }
 
+.menuPage:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
 .menuPage.active {
     color: rgba(0, 0, 0, 0.8);
     border-top: 1px solid rgba(0, 0, 0, 0.8);
+    font-weight: 700;
 }
 
 

@@ -6,7 +6,7 @@ var p3 = new Promise((resolve, reject) => {
   }, 100);
 });
 
-promiseAll([]).then(values => {
+promiseAll([p1, p2, p3]).then(values => {
   console.log(values);
 });
 

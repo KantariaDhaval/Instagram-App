@@ -1,3 +1,7 @@
+const numberOfPhotos = document.getElementById('photosNumber');
+let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
+
+
 (function () {
 
 async function fetchProfileData() {
