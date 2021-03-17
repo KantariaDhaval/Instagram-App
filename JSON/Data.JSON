@@ -18,84 +18,96 @@
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-rolls-royce-ghost-vn.jpg",
             "alt": "Post Image 1",
             "numberOfLikes": 100,
-            "numberOfComments": 10
+            "numberOfComments": 10,
+            "postType": "Image"
         },
         {
             "id": "post2",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-toyota-gr-supra-a91-edition-5k-ni.jpg",
             "alt": "Post Image 2",
             "numberOfLikes": 200,
-            "numberOfComments": 20
+            "numberOfComments": 20,
+            "postType": "Image"
         },
         {
             "id": "post3",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2021-lamborghini-huracan-evo-8k-sw.jpg",
             "alt": "Post Image 3",
             "numberOfLikes": 300,
-            "numberOfComments": 30
+            "numberOfComments": 30,
+            "postType": "Image"
         },
         {
             "id": "post4",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/mercedes-amg-gtr-4k-2021-q7.jpg",
             "alt": "Post Image 4",
             "numberOfLikes": 400,
-            "numberOfComments": 40
+            "numberOfComments": 40,
+            "postType": "Image"
         },
         {
             "id": "post5",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/aston-martin-v12-zagato-heritage-coupe--and-zagato-heritage-speedster-5k-w6.jpg",
             "alt": "Post Image 5",
             "numberOfLikes": 500,
-            "numberOfComments": 50
+            "numberOfComments": 50,
+            "postType": "Image"
         },
         {
             "id": "post6",
             "photoImageLink": "https://images.hdqwalls.com/download/h6-julietta-cgi-64-2880x1800.jpg",
             "alt": "Post Image 6",
             "numberOfLikes": 600,
-            "numberOfComments": 60
+            "numberOfComments": 60,
+            "postType": "Image"
         },
         {
             "id": "post7",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/2018-aston-martin-db11-volante-c4.jpg",
             "alt": "Post Image 7",
             "numberOfLikes": 700,
-            "numberOfComments": 70
+            "numberOfComments": 70,
+            "postType": "Image"
         },
         {
             "id": "post8",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/vision-gran-turismo-mercedes-benz.jpg",
             "alt": "Post Image 8",
             "numberOfLikes": 800,
-            "numberOfComments": 80
+            "numberOfComments": 80,
+            "postType": "Image"
         },
         {
             "id": "post9",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/bentley-continental-gt-pikes-peak-2021-0a.jpg",
             "alt": "Post Image 9",
             "numberOfLikes": 900,
-            "numberOfComments": 90
+            "numberOfComments": 90,
+            "postType": "Image"
         },
         {
             "id": "post10",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/bugatti-chiron-cgi-front-look-4k-91.jpg",
             "alt": "Post Image 10",
             "numberOfLikes": 1000,
-            "numberOfComments": 100
+            "numberOfComments": 100,
+            "postType": "Image"
         },
         {
             "id": "post11",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/jaguar-vision-gran-turismo-sv-1900hp-car-4f.jpg",
             "alt": "Post Image 11",
             "numberOfLikes": 1100,
-            "numberOfComments": 110
+            "numberOfComments": 110,
+            "postType": "Image"
         },
         {
             "id": "post12",
             "photoImageLink": "https://images.hdqwalls.com/wallpapers/thumb/lotus-evija-r5.jpg",
             "alt": "Post Image 12",
             "numberOfLikes": 1200,
-            "numberOfComments": 120
+            "numberOfComments": 120,
+            "postType": "Image"
         }
     ],
 
@@ -105,28 +117,32 @@
             "photoImageLink": "https://player.vimeo.com/external/176282263.sd.mp4?s=eae20877d2f66cd5b7481c8e9ac2b4b10fd92bef&profile_id=164",
             "alt": "Post Image 1",
             "numberOfLikes": 100,
-            "numberOfComments": 10
+            "numberOfComments": 10,
+            "postType": "Video"
         },
         {
             "id": "igtv2",
             "photoImageLink": "https://player.vimeo.com/external/337972830.hd.mp4?s=e1f35d8fba350780d073e7e812f76f9246d15f5f&profile_id=171",
             "alt": "Post Image 2",
             "numberOfLikes": 200,
-            "numberOfComments": 20
+            "numberOfComments": 20,
+            "postType": "Video"
         },
         {
             "id": "igtv3",
             "photoImageLink": "https://player.vimeo.com/external/292228405.hd.mp4?s=83a9819b8812d6114ef8de903d3fbbbdac7dc1e2&profile_id=174",
             "alt": "Post Image 3",
             "numberOfLikes": 300,
-            "numberOfComments": 30
+            "numberOfComments": 30,
+            "postType": "Video"
         },
         {
             "id": "igtv4",
             "photoImageLink": "https://player.vimeo.com/external/291585321.hd.mp4?s=49d2dc0d56d5c49f38af956d4f338d1c8f27cc6b&profile_id=174",
             "alt": "Post Image 4",
             "numberOfLikes": 400,
-            "numberOfComments": 40
+            "numberOfComments": 40,
+            "postType": "Video"
         }
     ],
 
@@ -136,15 +152,25 @@
             "photoImageLink": "https://images.unsplash.com/photo-1446274093550-8cffcc304b98?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8bmlhZ2FyYSUyMGZhbGx8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "alt": "Post Image 1",
             "numberOfLikes": 100,
-            "numberOfComments": 10
+            "numberOfComments": 10,
+            "postType": "Image"
         },
         {
             "id": "saved2",
             "photoImageLink": "https://images.unsplash.com/photo-1469285994282-454ceb49e63c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YXN0b24lMjBtYXJ0aW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "alt": "Post Image 2",
             "numberOfLikes": 200,
-            "numberOfComments": 20
-        } 
+            "numberOfComments": 20,
+            "postType": "Image"
+        } ,
+        {
+            "id": "saved3",
+            "photoImageLink": "https://player.vimeo.com/external/292228405.hd.mp4?s=83a9819b8812d6114ef8de903d3fbbbdac7dc1e2&profile_id=174",
+            "alt": "Post Image 3",
+            "numberOfLikes": 300,
+            "numberOfComments": 30,
+            "postType": "Video"
+        }
     ],
 
     "taggedData": [
@@ -153,49 +179,56 @@
             "photoImageLink": "https://images.unsplash.com/photo-1444465693019-aa0b6392460d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzN8fG5hdHVyZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "alt": "Post Image 1",
             "numberOfLikes": 100,
-            "numberOfComments": 10
+            "numberOfComments": 10,
+            "postType": "Image"
         },
         {
             "id": "tagged2",
             "photoImageLink": "https://images.unsplash.com/photo-1444464666168-49d633b86797?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fG5hdHVyZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "alt": "Post Image 2",
             "numberOfLikes": 200,
-            "numberOfComments": 20
+            "numberOfComments": 20,
+            "postType": "Image"
         },
         {
             "id": "tagged3",
             "photoImageLink": "https://images.unsplash.com/photo-1549608276-5786777e6587?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YmlyZHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "alt": "Post Image 3",
             "numberOfLikes": 300,
-            "numberOfComments": 30
+            "numberOfComments": 30,
+            "postType": "Image"
         },
         {
             "id": "tagged4",
-            "photoImageLink": "https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmlyZHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            "photoImageLink": "https://player.vimeo.com/external/291585321.hd.mp4?s=49d2dc0d56d5c49f38af956d4f338d1c8f27cc6b&profile_id=174",
             "alt": "Post Image 4",
             "numberOfLikes": 400,
-            "numberOfComments": 40
+            "numberOfComments": 40,
+            "postType": "Video"
         },
         {
             "id": "tagged5",
             "photoImageLink": "https://images.unsplash.com/photo-1516233758813-a38d024919c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fGJpcmRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "alt": "Post Image 5",
             "numberOfLikes": 500,
-            "numberOfComments": 50
+            "numberOfComments": 50,
+            "postType": "Image"
         },
         {
             "id": "tagged6",
             "photoImageLink": "https://images.unsplash.com/photo-1565472501696-b871fa1ccfda?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8ZWFnbGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "alt": "Post Image 6",
             "numberOfLikes": 600,
-            "numberOfComments": 60
+            "numberOfComments": 60,
+            "postType": "Image"
         },
         {
             "id": "tagged7",
             "photoImageLink": "https://images.unsplash.com/29/fly.jpg?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTA3fHxiaXJkc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "alt": "Post Image 7",
             "numberOfLikes": 700,
-            "numberOfComments": 70
+            "numberOfComments": 70,
+            "postType": "Image"
         }
     ]
 }

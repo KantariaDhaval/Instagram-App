@@ -1,27 +1,12 @@
-const numberOfPhotos = document.getElementById('photosNumber');
-let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
+import {createAndAddPostContainer, createAndAddLikeAndCommentContainer, createAndAddImage, createAndAddVideo, createAndAddLikeBtn,  createAndAddCommentBtn} from './createHTMLElements.js';
 
-
-(function () {
-
-async function fetchProfileData() {
-    await fetch('./../JSON/Data.JSON')
-            .then((response) => response.json())
-            .then((data) => {
-                showProfileData(data.profileData);
-            });
-}
-
-fetchProfileData();
-
-function showProfileData(profileData) {
+function setProfileData(profileData) {
 
     // PROFILE PHOTO ICON IN HEADER
     const profilePhotoIcon = document.getElementById("profilePhotoIcon");
     profilePhotoIcon.src = profileData.profilePhotoLink;
 
     // SHOW ALL PROFILE CONTENT
-
     const profilePhoto = document.getElementById('profilePhoto');
     const handleName = document.getElementById('handleName');
     const followers = document.getElementById('followers');
@@ -31,6 +16,7 @@ function showProfileData(profileData) {
     const bio = document.getElementById('bio');
     const websiteLink = document.getElementById('websiteLink');
 
+    // SET VALUES OF PROFILE DATA
     profilePhoto.src = profileData.profilePhotoLink;
     handleName.innerText = profileData.handleName;
     numberOfPhotos.innerText = profileData.numberOfPhotos;
@@ -43,27 +29,20 @@ function showProfileData(profileData) {
     websiteLink.innerText = profileData.websiteLink;
 }
 
-const followBtn = document.getElementById('followBtn');
-const messageBtn = document.getElementById('messageBtn');
-const dropdownBtn = document.getElementById('dropdownBtn');
+function setPhotosData(photosData, container) {
+    photosData.forEach(photo => {
+        const photoDiv = createAndAddPostContainer(container);
+        
+        if(photo.postType === "Image") {
+            createAndAddImage(photo, photoDiv);
+        } else {
+            createAndAddVideo(photo, photoDiv);
+        }
+        
+        const likesAndCommentsDiv = createAndAddLikeAndCommentContainer(photoDiv);
+        createAndAddLikeBtn(photo, likesAndCommentsDiv);
+        createAndAddCommentBtn(photo, likesAndCommentsDiv);
+    });
+}
 
-followBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    followBtn.classList.toggle('activeFollowBtn');
-    messageBtn.classList.toggle('hidden');
-    dropdownBtn.classList.toggle('activeFollowBtn');
-
-    let currentFollowers = parseInt(followers.innerText);
-    if(followBtn.classList.contains('activeFollowBtn')) {
-        followBtn.innerText = "Unfollow";
-        currentFollowers++;
-    } else {
-        followBtn.innerText = "Follow";
-        currentFollowers--;
-    }
-    followers.innerText = currentFollowers;
-})
-
-
-})();
+export  {setProfileData, setPhotosData};
