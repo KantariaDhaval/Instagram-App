@@ -4,7 +4,6 @@ async function fetchProfileData() {
     await fetch('./../JSON/Data.JSON')
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 showProfileData(data.profileData);
             });
 }

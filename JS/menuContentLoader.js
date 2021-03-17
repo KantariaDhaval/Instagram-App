@@ -121,7 +121,7 @@ function createAndAddLikeIcon(photo, container) {
     photoHoverLikeIcon.classList.add("fas");
     photoHoverLikeIcon.classList.add("fa-heart");
     photoHoverLikeIcon.id = "likeIcon" + photo.id;
-
+    
     container.appendChild(photoHoverLikeIcon);
     return photoHoverLikeIcon;
 }
