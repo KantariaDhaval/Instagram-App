@@ -1,5 +1,8 @@
+import {createAndAddListElement, createAndAddLinkElement, createAndAddOption} from './createHTMLElements.js';
+
 (function () {
-    let listOfInfos = [
+
+let listOfInfos = [
     {
         "name": "About",
         "infoLink": ""
@@ -54,30 +57,7 @@ listOfInfos.forEach(info => {
 })
 
 languages.forEach(language => {
-    const optionElement = document.createElement('option');
-    optionElement.value = language;
-    optionElement.innerText = language;
-
-    languagesContainer.appendChild(optionElement);
+    createAndAddOption(language, languagesContainer);
 })
-
-function createAndAddListElement(info, container) {
-    const listElement = document.createElement('li');
-    listElement.classList.add('infoPage');
-    listElement.id = info.name;
-
-    container.appendChild(listElement);
-    return listElement;
-}
-
-function createAndAddLinkElement(info, container) {
-    const linkElement = document.createElement('a');
-    linkElement.classList.add('infoPageLink');
-    linkElement.href = info.infoLink;
-    linkElement.innerText = info.name;
-
-    container.appendChild(linkElement);
-}
-
 
 })();
