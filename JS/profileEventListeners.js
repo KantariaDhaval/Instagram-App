@@ -5,8 +5,7 @@ const messageBtn = document.getElementById('messageBtn');
 const dropdownBtn = document.getElementById('dropdownBtn');
 
 followBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
+    
     followBtn.classList.toggle('activeFollowBtn');
     messageBtn.classList.toggle('hidden');
     dropdownBtn.classList.toggle('activeFollowBtn');

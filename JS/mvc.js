@@ -1,9 +1,7 @@
-import {createAndAddPostContainer, createAndAddLikeAndCommentContainer, createAndAddImage, createAndAddVideo, createAndAddLikeBtn,  createAndAddCommentBtn} from './createHTMLElements.js';
-import {createAndAddListElement, createAndAddLinkElement, createAndAddOption} from './createHTMLElements.js';
+import {createAndAddPostContainer, createAndAddLikeAndCommentContainer, createAndAddImage, createAndAddVideo, createAndAddLikeBtn,  createAndAddCommentBtn, createAndAddListElement, createAndAddLinkElement, createAndAddOption} from './createHTMLElements.js';
 
 const numberOfPhotos = document.getElementById('photosNumber');
 let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
-
 
 var model = {
     fetchData: async function() {
@@ -149,11 +147,12 @@ var footerView = {
 var controller = {
     init: function() {
         model.fetchData()
-        .then(data => {
-            console.log(data);
-            profileView.init(data.profileData);
-            postsView.init(data);
-        });
+            .then(data => {
+                // console.log(data);
+                profileView.init(data.profileData);
+                postsView.init(data);
+            });
+
         footerView.init();
     },
     getFooterData: function() {

@@ -1,3 +1,5 @@
+import {eventListeners} from './menuEventListeners.js';
+
 function createAndAddPostContainer(container) {
     const photoDiv = document.createElement("div");
     photoDiv.classList.add("photoImage");
@@ -49,9 +51,7 @@ function createAndAddLikeBtn(photo, container) {
     container.appendChild(photoHoverLikeBtn);
 
     photoHoverLikeBtn.addEventListener('click', () => {
-        photoHoverLikeIcon.classList.toggle('activeLikeIcon');
-
-        updateCount(numberOfLikes, photoHoverLikeIcon, 'activeLikeIcon');
+        eventListeners.likeCommentBtn(photoHoverLikeIcon, 'activeLikeIcon', numberOfLikes);
     })
 }
 
@@ -88,9 +88,7 @@ function createAndAddCommentBtn(photo, container) {
     container.appendChild(photoHoverCommentBtn);
 
     photoHoverCommentBtn.addEventListener('click', () => {
-        photoHoverCommentIcon.classList.toggle('activeCommentIcon');
-
-        updateCount(numberOfComments, photoHoverCommentIcon, 'activeCommentIcon');      
+        eventListeners.likeCommentBtn(photoHoverCommentIcon, 'activeCommentIcon', numberOfComments);    
     })
 }
 
@@ -112,16 +110,6 @@ function createAndAddcommentCountSpan(photo, container) {
     
     container.appendChild(numberOfComments);
     return numberOfComments;
-}
-
-function updateCount(currentCount, countElement, checkClass) {
-    let count = parseInt(currentCount.innerText);
-    if(countElement.classList.contains(checkClass)) {
-        count++;
-    } else {
-        count--;
-    }
-    currentCount.innerText = count;
 }
 
 function createAndAddListElement(info, container) {
