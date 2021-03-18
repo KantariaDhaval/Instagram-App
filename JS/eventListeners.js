@@ -1,3 +1,6 @@
+const followBtn = document.getElementById('followBtn');
+const messageBtn = document.getElementById('messageBtn');
+const dropdownBtn = document.getElementById('dropdownBtn');
 const postsBtn = document.getElementById('postsBtn');
 const igtvBtn = document.getElementById('igtvBtn');
 const savedBtn = document.getElementById('savedBtn');
@@ -6,6 +9,10 @@ const posts = document.getElementById('posts');
 const igtv = document.getElementById('igtv');
 const saved = document.getElementById('saved');
 const tagged = document.getElementById('tagged');
+
+followBtn.addEventListener('click', () => {
+    eventListeners.toggleFollowBtn();
+})
 
 postsBtn.addEventListener('click', (e) => {
     eventListeners.changeTab(e.target, posts);
@@ -23,22 +30,37 @@ taggedBtn.addEventListener('click', (e) => {
     eventListeners.changeTab(e.target, tagged);
 })
 
-var eventListeners = {
-    changeTab: function(targetBtn, currentTab, currentNumberOfPhotos) {
+const eventListeners = {
+    toggleFollowBtn: function() {
+        helperFunctions.toggleClass(followBtn, 'activeFollowBtn');
+        helperFunctions.toggleClass(messageBtn, 'hidden');
+        helperFunctions.toggleClass(dropdownBtn, 'activeFollowBtn');
+
+        let currentFollowers = parseInt(followers.innerText);
+        if(followBtn.classList.contains('activeFollowBtn')) {
+            followBtn.innerText = "Unfollow";
+            currentFollowers++;
+        } else {
+            followBtn.innerText = "Follow";
+            currentFollowers--;
+        }
+        followers.innerText = currentFollowers;
+    },
+
+    changeTab: function(targetBtn, currentTab) {
         helperFunctions.removeActiveClassFromBtn();
         targetBtn.classList.add('active');
         helperFunctions.addHiddenClassToContainers();
         currentTab.classList.remove('hidden');
-        // numberOfPhotos.innerText = currentNumberOfPhotos;
     },
 
     likeCommentBtn: function(icon, className, numberOfCounts) {
-        icon.classList.toggle(className);
+        helperFunctions.toggleClass(icon, className);
         helperFunctions.updateCount(numberOfCounts, icon, className);
     }
 }
 
-var helperFunctions = {
+const helperFunctions = {
     removeActiveClassFromBtn: function() {
         postsBtn.classList.remove('active');
         igtvBtn.classList.remove('active');
@@ -61,6 +83,10 @@ var helperFunctions = {
             count--;
         }
         numberOfCounts.innerText = count;
+    },
+
+    toggleClass: function(element, className) {
+        element.classList.toggle(className);
     }
 }
 

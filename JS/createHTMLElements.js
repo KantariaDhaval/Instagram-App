@@ -1,4 +1,4 @@
-import {eventListeners} from './menuEventListeners.js';
+import {eventListeners} from './eventListeners.js';
 
 function createAndAddPostContainer(container) {
     const photoDiv = document.createElement("div");

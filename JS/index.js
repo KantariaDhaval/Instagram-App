@@ -1,7 +1,6 @@
 import {createAndAddPostContainer, createAndAddLikeAndCommentContainer, createAndAddImage, createAndAddVideo, createAndAddLikeBtn,  createAndAddCommentBtn, createAndAddListElement, createAndAddLinkElement, createAndAddOption} from './createHTMLElements.js';
 
 const numberOfPhotos = document.getElementById('photosNumber');
-let numberOfPosts, numberOfIgtvs, numberOfSaved, numberOfTagged;
 
 var model = {
     fetchData: async function() {
@@ -88,10 +87,6 @@ var profileView = {
 var postsView = {
     init: function(data) {
         numberOfPhotos.innerText = data.postsData.length;
-        numberOfPosts = data.postsData.length;
-        numberOfIgtvs = data.igtvData.length;
-        numberOfSaved = data.savedData.length;
-        numberOfTagged = data.taggedData.length;
         this.postsContainer = document.getElementById('postsContainer');
         this.igtvContainer = document.getElementById('igtvContainer');
         this.savedContainer = document.getElementById('savedContainer');
