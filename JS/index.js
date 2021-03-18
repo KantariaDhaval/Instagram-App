@@ -1,4 +1,5 @@
-import {createAndAddPostContainer, createAndAddLikeAndCommentContainer, createAndAddImage, createAndAddVideo, createAndAddLikeBtn,  createAndAddCommentBtn, createAndAddListElement, createAndAddLinkElement, createAndAddOption} from './createHTMLElements.js';
+import {buildPosts} from './buildPosts.js';
+import {buildFooter} from './buildFooter.js';
 
 const numberOfPhotos = document.getElementById('photosNumber');
 
@@ -96,46 +97,17 @@ var postsView = {
     },
 
     render: function(data) {
-        this.showData(data.postsData, postsContainer);
-        this.showData(data.igtvData, igtvContainer);
-        this.showData(data.savedData, savedContainer);
-        this.showData(data.taggedData, taggedContainer);
-    },
-
-    showData: function(data, container) {
-        data.forEach(photo => {
-            const photoDiv = createAndAddPostContainer(container);
-            
-            if(photo.postType === "Image") {
-                createAndAddImage(photo, photoDiv);
-            } else {
-                createAndAddVideo(photo, photoDiv);
-            }
-            
-            const likesAndCommentsDiv = createAndAddLikeAndCommentContainer(photoDiv);
-            createAndAddLikeBtn(photo, likesAndCommentsDiv);
-            createAndAddCommentBtn(photo, likesAndCommentsDiv);
-        });
+        buildPosts.build(data.postsData, postsContainer);
+        buildPosts.build(data.igtvData, igtvContainer);
+        buildPosts.build(data.savedData, savedContainer);
+        buildPosts.build(data.taggedData, taggedContainer);
     }
 };
 
 var footerView = {
     init: function() {
-        this.listsOfInfoContainer = document.getElementById('listsOfInfo');
-        this.languagesContainer = document.getElementById('selectLanguages');
-        this.render();
-    },
-    render: function() {
         var data = controller.getFooterData();
-        
-        data.listsOfInfo.forEach(info => {
-            const listElement = createAndAddListElement(info, this.listsOfInfoContainer);
-            createAndAddLinkElement(info, listElement);
-        })
-        
-        data.languages.forEach(language => {
-            createAndAddOption(language, this.languagesContainer);
-        })
+        buildFooter.build(data);
     }
 };
 

@@ -171,6 +171,7 @@ video:focus {
 
 .followBtn:hover {
     background-color: rgb(0, 100, 255);
+    transform: scale(1.05);
 }
 
 .activeFollowBtn {
@@ -306,6 +307,10 @@ video:focus {
     cursor: pointer;
 }
 
+.photoHoverBtn:hover {
+    transform: scale(1.1);
+}
+
 .phoHoverBtn:nth-child(2) {
     margin-right: 0;
 }
@@ -326,6 +331,7 @@ video:focus {
 
 .photoImage:hover {
     opacity: 0.7;
+    transform: scale(1.02);
 }
 
 .photoImage:hover .likesAndComments {
