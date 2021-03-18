@@ -1,5 +1,5 @@
 (function () {
-
+    
 const postsBtn = document.getElementById('postsBtn');
 const igtvBtn = document.getElementById('igtvBtn');
 const savedBtn = document.getElementById('savedBtn');
@@ -13,28 +13,28 @@ postsBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     posts.classList.remove('hidden');
-    numberOfPhotos.innerText = numberOfPosts;
+    // numberOfPhotos.innerText = numberOfPosts;
 })
 
 igtvBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     igtv.classList.remove('hidden');
-    numberOfPhotos.innerText = numberOfIgtvs;
+    // numberOfPhotos.innerText = numberOfIgtvs;
 })
 
 savedBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     saved.classList.remove('hidden');
-    numberOfPhotos.innerText = numberOfSaved;
+    // numberOfPhotos.innerText = numberOfSaved;
 })
 
 taggedBtn.addEventListener('click', (e) => {
     addActiveClassToBtn(e.target);
     addHiddenClassToContainers(e.target);
     tagged.classList.remove('hidden');
-    numberOfPhotos.innerText = numberOfTagged;
+    // numberOfPhotos.innerText = numberOfTagged;
 })
 
 
