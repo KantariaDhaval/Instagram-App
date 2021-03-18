@@ -1,13 +1,13 @@
 var p1 = Promise.resolve(3);
 var p2 = 1337;
 var p3 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("foo");
-  }, 100);
+    setTimeout(() => {
+        resolve("foo");
+    }, 100);
 });
 
 promiseAll([p1, p2, p3]).then(values => {
-  console.log(values);
+    console.log(values);
 });
 
 
@@ -17,10 +17,10 @@ function promiseAll(arrayOfPromises) {
     }
 
     return new Promise((resolve, reject) => {
-       let returnValue = [];
-       let completed = 0;
-       
-       arrayOfPromises.forEach((promise, index) => {
+        let returnValue = [];
+        let completed = 0;
+        
+        arrayOfPromises.forEach((promise, index) => {
             Promise.resolve(promise)
                 .then(result => {
                     returnValue[index] = result;
@@ -31,6 +31,6 @@ function promiseAll(arrayOfPromises) {
                     }
                 })
                 .catch(err => reject(err));
-       });
+        });
     });
 }
