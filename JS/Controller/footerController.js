@@ -9,5 +9,5 @@ let footerController = {
         return footerModel.footerData;
     }
 }
-footerController.init();
+
 export {footerController};
