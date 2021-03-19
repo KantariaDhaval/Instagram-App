@@ -6,7 +6,7 @@ let postsController = {
     init: function() {
         postsModel.fetchData()
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 postsView.init(data);
             });
     },
