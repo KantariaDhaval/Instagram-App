@@ -1,0 +1,30 @@
+const ids = {
+    FOLLOW_BTN: document.getElementById('followBtn'),
+    MESSAGE_BTN: document.getElementById('messageBtn'),
+    DROPDOWN_BTN: document.getElementById('dropdownBtn'),
+    POSTS_BTN: document.getElementById('postsBtn'),
+    IGTV_BTN: document.getElementById('igtvBtn'),
+    SAVED_BTN: document.getElementById('savedBtn'),
+    TAGGED_BTN: document.getElementById('taggedBtn'),
+    POSTS: document.getElementById('posts'),
+    IGTV: document.getElementById('igtv'),
+    SAVED: document.getElementById('saved'),
+    TAGGED: document.getElementById('tagged'),
+    POSTS_WRAPPER: document.getElementById('postsWrapper'),
+    NUMBER_OF_PHOTOS: document.getElementById('photosNumber'),
+    PROFILE_PHOTO_ICON: document.getElementById("profilePhotoIcon"),
+    PROFILE_PHOTO: document.getElementById('profilePhoto'),
+    HANDLE_NAME: document.getElementById('handleName'),
+    FOLLOWERS: document.getElementById('followers'),
+    FOLLOWING: document.getElementById('following'),
+    USERNAME: document.getElementById('username'),
+    DESIGNATION: document.getElementById('designation'),
+    BIO: document.getElementById('bio'),
+    WEBSITE_LINK: document.getElementById('websiteLink'),
+    POSTS_CONTAINER: document.getElementById('postsContainer'),
+    IGTV_CONTAINER: document.getElementById('igtvContainer'),
+    SAVED_CONTAINER: document.getElementById('savedContainer'),
+    TAGGED_CONTAINER: document.getElementById('taggedContainer')
+}
+
+export {ids};

@@ -1,6 +1,4 @@
-import {eventListeners} from './eventListeners.js';
-
-let buildPosts =(function() {
+let buildPosts = (function() {
 
     function createAndAddPostContainer(container) {
         const photoDiv = document.createElement("div");
