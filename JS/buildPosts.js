@@ -51,10 +51,6 @@ let buildPosts =(function() {
         const numberOfLikes = createAndAddLikeCountSpan(photo, photoHoverLikeBtn);
 
         container.appendChild(photoHoverLikeBtn);
-
-        photoHoverLikeBtn.addEventListener('click', () => {
-            eventListeners.likeCommentBtn(photoHoverLikeIcon, 'activeLikeIcon', numberOfLikes);
-        })
     }
 
     function createAndAddLikeIcon(photo, container) {
@@ -70,6 +66,7 @@ let buildPosts =(function() {
 
     function createAndAddLikeCountSpan(photo, container) {
         const numberOfLikes = document.createElement("span");
+        numberOfLikes.classList.add('numberOfCounts');
         numberOfLikes.innerText = photo.numberOfLikes;
         numberOfLikes.id = "numberOfLikes" + photo.id;
 
@@ -88,10 +85,6 @@ let buildPosts =(function() {
         const numberOfComments = createAndAddcommentCountSpan(photo, photoHoverCommentBtn);
         
         container.appendChild(photoHoverCommentBtn);
-
-        photoHoverCommentBtn.addEventListener('click', () => {
-            eventListeners.likeCommentBtn(photoHoverCommentIcon, 'activeCommentIcon', numberOfComments);    
-        })
     }
 
     function createAndAddCommentIcon(photo, container) {
@@ -107,6 +100,7 @@ let buildPosts =(function() {
 
     function createAndAddcommentCountSpan(photo, container) {
         const numberOfComments = document.createElement("span");
+        numberOfComments.classList.add('numberOfCounts');
         numberOfComments.innerText = photo.numberOfComments;
         numberOfComments.id = "numberOfComments" + photo.id;
         

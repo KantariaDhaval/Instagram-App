@@ -9,6 +9,7 @@ const posts = document.getElementById('posts');
 const igtv = document.getElementById('igtv');
 const saved = document.getElementById('saved');
 const tagged = document.getElementById('tagged');
+const postsWrapper = document.getElementById('postsWrapper');
 
 followBtn.addEventListener('click', () => {
     eventListeners.toggleFollowBtn();
@@ -28,6 +29,18 @@ savedBtn.addEventListener('click', (e) => {
 
 taggedBtn.addEventListener('click', (e) => {
     eventListeners.changeTab(e.target, tagged);
+})
+
+postsWrapper.addEventListener('click', (e) => {
+    if(e.target.classList.contains('photoHoverBtn')) {
+        const icon = e.target.firstChild;
+        const children = e.target.childNodes;
+        if(icon.classList.contains('fa-heart')) {
+            eventListeners.likeCommentBtn(icon, 'activeLikeIcon', children[1]);
+        } else {
+            eventListeners.likeCommentBtn(icon ,'activeCommentIcon', children[1]);
+        }
+    }
 })
 
 const eventListeners = {

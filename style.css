@@ -321,6 +321,10 @@ video:focus {
     pointer-events: none;
 }
 
+.numberOfCounts {
+    pointer-events: none;
+}
+
 .activeLikeIcon {
     color: red;
 } 
