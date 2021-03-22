@@ -21,7 +21,7 @@ let postsController = {
     
         likeCommentBtn: function(icon, className, numberOfCounts) {
             helperFunctions.toggleClass(icon, className);
-            helperFunctions.updateCount(numberOfCounts, icon, className);
+            helperFunctions.updateLikeCommentCount(numberOfCounts, icon, className);
         }
     }
 }

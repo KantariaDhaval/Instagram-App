@@ -15,7 +15,7 @@ let helperFunctions = {
         ids.TAGGED.classList.add('hidden');
     },
 
-    updateCount: function(numberOfCounts, icon, className) {
+    updateLikeCommentCount: function(numberOfCounts, icon, className) {
         let count = parseInt(numberOfCounts.innerText);
         if(icon.classList.contains(className)) {
             count++;
