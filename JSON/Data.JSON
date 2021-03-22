@@ -22,7 +22,7 @@
             "numberOfComments": 10,
             "postType": "Image",
             "dataType": "postsData",
-            "isLiked": false,
+            "isLiked": true,
             "isCommented": false
         },
         {
@@ -34,7 +34,7 @@
             "postType": "Image",
             "dataType": "postsData",
             "isLiked": false,
-            "isCommented": false
+            "isCommented": true
         },
         {
             "id": "3",

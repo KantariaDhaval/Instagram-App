@@ -3,7 +3,8 @@ import {buildPosts} from './../buildPosts.js';
 import {postsController} from './../Controller/postsController.js';
 
 let postsView = {
-    init: function(data) {
+
+    init: function(activeTab) {
         this.postsData = postsController.getPostsData();
         this.igtvData = postsController.getIgtvData();
         this.savedData = postsController.getSavedData();
@@ -12,6 +13,7 @@ let postsView = {
         ids.NUMBER_OF_PHOTOS.innerText = this.postsData.length;
         
         this.render();
+        this.showActiveTab(activeTab);
     },
 
     render: function() {

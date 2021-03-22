@@ -3,7 +3,7 @@ import {postsView} from './../View/postsView.js';
 
 let postsController = {
     init: function() {
-        postsView.init();
+        postsView.init(postsModel.getActiveTab());
     },
 
     getPostsData: function() {

@@ -19,6 +19,10 @@ let profileView = {
         ids.BIO.innerText = this.data.bio;
         ids.WEBSITE_LINK.href = this.data.websiteLink;
         ids.WEBSITE_LINK.innerText = this.data.websiteLink;
+
+        if(this.data.isFollowed) {
+            this.toggleFollowLayout(true);
+        }
     },
 
     updateFollowerCount: function(followers) {

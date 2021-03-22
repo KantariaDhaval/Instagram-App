@@ -59,6 +59,9 @@ let buildPosts = (function() {
         photoHoverLikeIcon.classList.add("photoHoverIcon");
         photoHoverLikeIcon.classList.add("fas");
         photoHoverLikeIcon.classList.add("fa-heart");
+        if(photo.isLiked) {
+            photoHoverLikeIcon.classList.add('activeLikeIcon');
+        }
         photoHoverLikeIcon.id = "likeIcon" + photo.id;
         
         container.appendChild(photoHoverLikeIcon);
@@ -95,6 +98,9 @@ let buildPosts = (function() {
         photoHoverCommentIcon.classList.add("photoHoverIcon");
         photoHoverCommentIcon.classList.add("fas");
         photoHoverCommentIcon.classList.add("fa-comment");
+        if(photo.isCommented) {
+            photoHoverCommentIcon.classList.add('activeCommentIcon');
+        }
         photoHoverCommentIcon.id = "commentIcon" + photo.id;
 
         container.appendChild(photoHoverCommentIcon);

@@ -1,4 +1,5 @@
 let postsModel = {
+
     postsData: [],
     igtvData: [],
     savedData: [],
