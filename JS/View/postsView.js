@@ -4,16 +4,21 @@ import {postsController} from './../Controller/postsController.js';
 
 let postsView = {
     init: function(data) {
-        ids.NUMBER_OF_PHOTOS.innerText = data.postsData.length;
+        this.postsData = postsController.getPostsData();
+        this.igtvData = postsController.getIgtvData();
+        this.savedData = postsController.getSavedData();
+        this.taggedData = postsController.getTaggedData();
+
+        ids.NUMBER_OF_PHOTOS.innerText = this.postsData.length;
         
-        this.render(data);
+        this.render();
     },
 
-    render: function(data) {
-        buildPosts.build(data.postsData, ids.POSTS_CONTAINER);
-        buildPosts.build(data.igtvData, ids.IGTV_CONTAINER);
-        buildPosts.build(data.savedData, ids.SAVED_CONTAINER);
-        buildPosts.build(data.taggedData, ids.TAGGED_CONTAINER);
+    render: function() {
+        buildPosts.build(this.postsData, ids.POSTS_CONTAINER);
+        buildPosts.build(this.igtvData, ids.IGTV_CONTAINER);
+        buildPosts.build(this.savedData, ids.SAVED_CONTAINER);
+        buildPosts.build(this.taggedData, ids.TAGGED_CONTAINER);
     }
 }
 

@@ -4,11 +4,23 @@ import {helperFunctions} from './../helperFunctions.js';
 
 let postsController = {
     init: function() {
-        postsModel.fetchData()
-            .then(data => {
-                // console.log(data);
-                postsView.init(data);
-            });
+        postsView.init();
+    },
+
+    getPostsData: function() {
+        return postsModel.postsData;
+    },
+
+    getIgtvData: function() {
+        return postsModel.igtvData;
+    },
+
+    getSavedData: function() {
+        return postsModel.savedData;
+    },
+    
+    getTaggedData: function() {
+        return postsModel.taggedData;
     },
 
     eventListeners: {

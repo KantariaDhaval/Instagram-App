@@ -1,8 +1,8 @@
 let postsModel = {
-    fetchData: async function() {
-        return await fetch('./../JSON/Data.JSON')
-                .then((response) => response.json());
-    }
+    postsData: [],
+    igtvData: [],
+    savedData: [],
+    taggedData: []
 }
 
 export {postsModel};

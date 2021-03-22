@@ -5,11 +5,11 @@ import {ids} from './../registry.js';
 
 let profileController = {
     init: function() {
-        profileModel.fetchData()
-            .then(data => {
-                // console.log(data);
-                profileView.init(data.profileData);
-            });
+        profileView.init();
+    },
+
+    getData: function() {
+        return profileModel.data;
     },
 
     eventListeners: {
