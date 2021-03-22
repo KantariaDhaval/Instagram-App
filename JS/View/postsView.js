@@ -19,35 +19,46 @@ let postsView = {
         buildPosts.build(this.igtvData, ids.IGTV_CONTAINER);
         buildPosts.build(this.savedData, ids.SAVED_CONTAINER);
         buildPosts.build(this.taggedData, ids.TAGGED_CONTAINER);
+    },
+
+    hidePreviousTab: function(tab) {
+        ids[tab+'_BTN'].classList.remove('active');
+        ids[tab].classList.add('hidden');
+    },
+
+    showActiveTab: function(tab) {
+        ids[tab+'_BTN'].classList.add('active');
+        ids[tab].classList.remove('hidden');
+    },
+
+    updateLikeOrCommentCounts: function(countSpan, numberOfCounts) {
+        countSpan.innerText = numberOfCounts;
+    },
+
+    toggleLikeOrCommentIcon: function(icon, className) {
+        icon.classList.toggle(className);
     }
 }
 
-ids.POSTS_BTN.addEventListener('click', (e) => {
-    postsController.eventListeners.changeTab(e.target, ids.POSTS);
+ids.POSTS_BTN.addEventListener('click', () => {
+    postsController.eventListeners.changeTab('POSTS');
 })
 
-ids.IGTV_BTN.addEventListener('click', (e) => {
-    postsController.eventListeners.changeTab(e.target, ids.IGTV);
+ids.IGTV_BTN.addEventListener('click', () => {
+    postsController.eventListeners.changeTab('IGTV');
 })
 
-ids.SAVED_BTN.addEventListener('click', (e) => {
-    postsController.eventListeners.changeTab(e.target, ids.SAVED);
+ids.SAVED_BTN.addEventListener('click', () => {
+    postsController.eventListeners.changeTab('SAVED');
 })
 
-ids.TAGGED_BTN.addEventListener('click', (e) => {
-    postsController.eventListeners.changeTab(e.target, ids.TAGGED);
+ids.TAGGED_BTN.addEventListener('click', () => {
+    postsController.eventListeners.changeTab('TAGGED');
 })
 
 ids.POSTS_WRAPPER.addEventListener('click', (e) => {
     if (e.target.classList.contains('photoHoverBtn')) {
-        const icon = e.target.firstChild;
-        const children = e.target.childNodes;
-        
-        if (icon.classList.contains('fa-heart')) {
-            postsController.eventListeners.likeCommentBtn(icon, 'activeLikeIcon', children[1]);
-        } else {
-            postsController.eventListeners.likeCommentBtn(icon ,'activeCommentIcon', children[1]);
-        }
+        postsController.eventListeners.updateLikeCommentBtn(e.target);
     }
 })
 

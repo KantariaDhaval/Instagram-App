@@ -1,6 +1,5 @@
 import {postsModel} from './../Model/postsModel.js';
 import {postsView} from './../View/postsView.js';
-import {helperFunctions} from './../helperFunctions.js';
 
 let postsController = {
     init: function() {
@@ -18,22 +17,35 @@ let postsController = {
     getSavedData: function() {
         return postsModel.savedData;
     },
-    
+
     getTaggedData: function() {
         return postsModel.taggedData;
     },
 
     eventListeners: {
-        changeTab: function(targetBtn, currentTab) {
-            helperFunctions.removeActiveClassFromBtn();
-            targetBtn.classList.add('active');
-            helperFunctions.addHiddenClassToContainers();
-            currentTab.classList.remove('hidden');
+        changeTab: function(currentTab) {
+            const previousTab = postsModel.getActiveTab();
+            postsModel.changeActiveTab(currentTab);
+            postsView.hidePreviousTab(previousTab);
+            postsView.showActiveTab(postsModel.getActiveTab());
         },
     
-        likeCommentBtn: function(icon, className, numberOfCounts) {
-            helperFunctions.toggleClass(icon, className);
-            helperFunctions.updateLikeCommentCount(numberOfCounts, icon, className);
+        updateLikeCommentBtn: function(clickedBtn) {
+            const icon = clickedBtn.firstChild;
+            const children = clickedBtn.childNodes;
+            const dataType = clickedBtn.dataType;
+            const index = clickedBtn.dataset.index;
+        
+            if (icon.classList.contains('fa-heart')) {
+                postsModel.toggleIsLiked(dataType, index);
+                postsView.updateLikeOrCommentCounts(children[1], postsModel.getNumberOfLikes(dataType, index));
+                postsView.toggleLikeOrCommentIcon(icon, 'activeLikeIcon');
+            } else {
+                postsModel.toggleIsCommented(dataType, index);
+                postsView.updateLikeOrCommentCounts(children[1], postsModel.getNumberOfComments(dataType, index));
+                postsView.toggleLikeOrCommentIcon(icon, 'activeCommentIcon');
+            }
+
         }
     }
 }

@@ -42,7 +42,10 @@ let buildPosts = (function() {
         const photoHoverLikeBtn = document.createElement("button");
         photoHoverLikeBtn.classList.add("photoHoverBtn");
         photoHoverLikeBtn.classList.add("likeBtn");
-        photoHoverLikeBtn.id = "likeBtn" + photo.id;
+        photoHoverLikeBtn.id = "likeBtn" + photo.dataType + photo.id;
+        photoHoverLikeBtn.dataset.index = photo.id;
+        photoHoverLikeBtn.dataType = photo.dataType;
+        // console.log(photoHoverLikeBtn.dataset.index);
         
         const photoHoverLikeIcon = createAndAddLikeIcon(photo, photoHoverLikeBtn);
         
@@ -76,7 +79,9 @@ let buildPosts = (function() {
         const photoHoverCommentBtn = document.createElement("button");
         photoHoverCommentBtn.classList.add("photoHoverBtn");
         photoHoverCommentBtn.classList.add("commentBtn");
-        photoHoverCommentBtn.id = "commentBtn" + photo.id;
+        photoHoverCommentBtn.id = "commentBtn" + photo.dataType + photo.id;
+        photoHoverCommentBtn.dataset.index = photo.id;
+        photoHoverCommentBtn.dataType = photo.dataType;
         
         const photoHoverCommentIcon = createAndAddCommentIcon(photo, photoHoverCommentBtn);
 

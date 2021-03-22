@@ -1,5 +1,6 @@
 import {ids} from './../registry.js';
 import {profileController} from './../Controller/profileController.js';
+import {helperFunctions} from './../helperFunctions.js';
 
 let profileView = {
     init: function() {
@@ -19,6 +20,21 @@ let profileView = {
         ids.BIO.innerText = this.data.bio;
         ids.WEBSITE_LINK.href = this.data.websiteLink;
         ids.WEBSITE_LINK.innerText = this.data.websiteLink;
+    },
+
+    updateFollowerCount: function(followers) {
+        ids.FOLLOWERS.innerText = followers;
+    },
+
+    toggleFollowLayout: function(isFollowed) {
+        helperFunctions.toggleClass(ids.FOLLOW_BTN, 'activeFollowBtn');
+        helperFunctions.toggleClass(ids.MESSAGE_BTN, 'hidden');
+        helperFunctions.toggleClass(ids.DROPDOWN_BTN, 'activeFollowBtn');
+        if(isFollowed) {
+            ids.FOLLOW_BTN.innerText = 'Unfollow';
+        } else {
+            ids.FOLLOW_BTN.innerText = 'Follow';
+        }
     }
 }
 
