@@ -3,7 +3,6 @@ import {postsController} from './Controller/postsController.js';
 import {footerController} from './Controller/footerController.js';
 import {profileModel} from './Model/profileModel.js';
 import {postsModel} from './Model/postsModel.js';
-// import {footerModel} from './Model/footerModel.js';
 
 async function fetchData() {
     await fetch('./../../JSON/Data.JSON')

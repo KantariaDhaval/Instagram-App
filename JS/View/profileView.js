@@ -1,6 +1,5 @@
 import {ids} from './../registry.js';
 import {profileController} from './../Controller/profileController.js';
-import {helperFunctions} from './../helperFunctions.js';
 
 let profileView = {
     init: function() {
@@ -27,9 +26,9 @@ let profileView = {
     },
 
     toggleFollowLayout: function(isFollowed) {
-        helperFunctions.toggleClass(ids.FOLLOW_BTN, 'activeFollowBtn');
-        helperFunctions.toggleClass(ids.MESSAGE_BTN, 'hidden');
-        helperFunctions.toggleClass(ids.DROPDOWN_BTN, 'activeFollowBtn');
+        ids.FOLLOW_BTN.classList.toggle('activeFollowBtn');
+        ids.MESSAGE_BTN.classList.toggle('hidden');
+        ids.DROPDOWN_BTN.classList.toggle('activeFollowBtn');
         if(isFollowed) {
             ids.FOLLOW_BTN.innerText = 'Unfollow';
         } else {
