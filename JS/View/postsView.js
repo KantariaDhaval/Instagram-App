@@ -10,13 +10,13 @@ let postsView = {
         this.savedData = postsController.getSavedData();
         this.taggedData = postsController.getTaggedData();
 
-        ids.NUMBER_OF_PHOTOS.innerText = this.postsData.length;
-        
         this.render();
         this.showActiveTab(activeTab);
     },
 
     render: function() {
+        ids.NUMBER_OF_PHOTOS.innerText = this.postsData.length;
+        
         buildPosts.build(this.postsData, ids.POSTS_CONTAINER);
         buildPosts.build(this.igtvData, ids.IGTV_CONTAINER);
         buildPosts.build(this.savedData, ids.SAVED_CONTAINER);
