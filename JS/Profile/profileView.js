@@ -1,6 +1,6 @@
 import {classes} from '../registry.js';
 import {profileController} from './profileController.js';
-import {buildProfile} from './../buildProfile.js';
+import {buildProfile} from '../buildContents/buildProfile.js';
 
 const profileView = {
     init: function() {

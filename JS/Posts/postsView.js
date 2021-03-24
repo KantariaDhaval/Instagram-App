@@ -1,5 +1,5 @@
 import {DOMElements, classes} from '../registry.js';
-import {buildPosts} from '../buildPosts.js';
+import {buildPosts} from '../buildContents/buildPosts.js';
 import {postsController} from './postsController.js';
 import { profileController } from '../Profile/profileController.js';
 

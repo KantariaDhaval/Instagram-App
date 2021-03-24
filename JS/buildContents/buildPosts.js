@@ -1,4 +1,4 @@
-import {btnTypes, classes} from './registry.js';
+import {btnTypes, classes} from '../registry.js';
 
 const buildPosts = (function() {
 

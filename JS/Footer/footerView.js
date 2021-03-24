@@ -1,5 +1,5 @@
 import {footerController} from './footerController.js';
-import {buildFooter} from '../buildFooter.js';
+import {buildFooter} from '../buildContents/buildFooter.js';
 
 const footerView = {
     init: function() {

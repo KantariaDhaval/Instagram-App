@@ -1,4 +1,4 @@
-import { classes } from "./registry.js";
+import { classes } from "../registry.js";
 
 const buildFooter = (function() {
     function createAndAddListElement(info, container) {
