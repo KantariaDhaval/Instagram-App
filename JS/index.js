@@ -1,21 +1,11 @@
-import {profileController} from './Controller/profileController.js';
-import {postsController} from './Controller/postsController.js';
-import {footerController} from './Controller/footerController.js';
-import {profileModel} from './Model/profileModel.js';
-import {postsModel} from './Model/postsModel.js';
-
+import {profileController} from './Profile/profileController.js';
+import {postsController} from './Posts/postsController.js';
+import {footerController} from './Footer/footerController.js';
 
 fetch('./../../JSON/Data.JSON')
     .then((response) => response.json())
     .then((data) => {
-        
-        profileModel.data = data.profileData;
-        postsModel.postsData = data.postsData;
-        postsModel.igtvData = data.igtvData;
-        postsModel.savedData = data.savedData;
-        postsModel.taggedData = data.taggedData;
-
-        profileController.init();
-        postsController.init();
+        profileController.init(data.profileData);
+        postsController.init(data);
         footerController.init();
     });

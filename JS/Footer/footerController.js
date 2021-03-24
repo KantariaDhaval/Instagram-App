@@ -1,7 +1,7 @@
-import { footerModel } from "../Model/footerModel.js";
-import { footerView } from "../View/footerView.js";
+import { footerModel } from "./footerModel.js";
+import { footerView } from "./footerView.js";
 
-let footerController = {
+const footerController = {
     init: function() {
         footerView.init();
     },

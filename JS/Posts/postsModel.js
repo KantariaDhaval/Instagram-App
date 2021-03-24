@@ -6,15 +6,31 @@ let postsModel = {
     taggedData: [],
     activeTab: "POSTS",
 
+    setPostsData: function(data) {
+        this.postsData = data;
+    },
+
+    setIgtvData: function(data) {
+        this.igtvData = data;
+    },
+
+    setSavedData: function(data) {
+        this.savedData = data;
+    },
+
+    setTaggedData: function(data) {
+        this.taggedData = data;
+    },
+
     getActiveTab: function() {
         return this.activeTab;
     },
 
-    changeActiveTab: function(currentTab) {
+    setActiveTab: function(currentTab) {
         this.activeTab = currentTab;
     },
 
-    toggleIsLiked: function(dataType, index) {
+    togglePostLiked: function(dataType, index) {
         const currentPost = this[dataType][index - 1];
         currentPost.isLiked = !currentPost.isLiked;
         if(currentPost.isLiked) {
@@ -25,7 +41,7 @@ let postsModel = {
         return currentPost.isLiked;
     },
 
-    toggleIsCommented: function(dataType, index) {
+    togglePostCommented: function(dataType, index) {
         const currentPost = this[dataType][index - 1];
         currentPost.isCommented = !currentPost.isCommented;
         if(currentPost.isCommented) {

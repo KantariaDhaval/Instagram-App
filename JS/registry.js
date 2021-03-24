@@ -1,7 +1,4 @@
-const ids = {
-    FOLLOW_BTN: document.getElementById('followBtn'),
-    MESSAGE_BTN: document.getElementById('messageBtn'),
-    DROPDOWN_BTN: document.getElementById('dropdownBtn'),
+const DOMElements = {
     POSTS_BTN: document.getElementById('postsBtn'),
     IGTV_BTN: document.getElementById('igtvBtn'),
     SAVED_BTN: document.getElementById('savedBtn'),
@@ -10,21 +7,38 @@ const ids = {
     IGTV: document.getElementById('igtv'),
     SAVED: document.getElementById('saved'),
     TAGGED: document.getElementById('tagged'),
-    POSTS_WRAPPER: document.getElementById('postsWrapper'),
-    NUMBER_OF_PHOTOS: document.getElementById('photosNumber'),
-    PROFILE_PHOTO_ICON: document.getElementById("profilePhotoIcon"),
-    PROFILE_PHOTO: document.getElementById('profilePhoto'),
-    HANDLE_NAME: document.getElementById('handleName'),
-    FOLLOWERS: document.getElementById('followers'),
-    FOLLOWING: document.getElementById('following'),
-    USERNAME: document.getElementById('username'),
-    DESIGNATION: document.getElementById('designation'),
-    BIO: document.getElementById('bio'),
-    WEBSITE_LINK: document.getElementById('websiteLink'),
     POSTS_CONTAINER: document.getElementById('postsContainer'),
     IGTV_CONTAINER: document.getElementById('igtvContainer'),
     SAVED_CONTAINER: document.getElementById('savedContainer'),
     TAGGED_CONTAINER: document.getElementById('taggedContainer')
+};
+
+const classes = {
+    ACTIVE: 'active',
+    HIDDEN: 'hidden',
+    ACTIVE_LIKE_ICON: 'activeLikeIcon',
+    ACTIVE_COMMENT_ICON: 'activeCommentIcon',
+    ACTIVE_FOLLOW_BTN: 'activeFollowBtn',
+    PHOTO_IMAGE: 'photoImage',
+    LIKES_AND_COMMENTS: 'likesAndComments',
+    PHOTO: 'photo',
+    PHOTO_HOVER_BTN: 'photoHoverBtn',
+    PHOTO_HOVER_ICON: 'photoHoverIcon',
+    LIKE_BTN: 'likeBtn',
+    COMMENT_BTN: 'commentBtn',
+    NUMBER_OF_COUNTS: 'numberOfCounts',
+    INFO_PAGE: 'infoPage',
+    INFO_PAGE_LINK: 'infoPageLink'
+};
+
+const btnTypes = {
+    POSTS: "POSTS",
+    IGTV: "IGTV",
+    SAVED: "SAVED",
+    TAGGED: "TAGGED",
+    LIKE_ICON: "likeIcon",
+    COMMENT_ICON: "commentIcon",
+    LIKE_OR_COMMENT_BTN: "likeOrCommentBtn"
 }
 
-export {ids};
+export {DOMElements, classes, btnTypes};

@@ -1,7 +1,9 @@
-let buildFooter = (function() {
+import { classes } from "./registry.js";
+
+const buildFooter = (function() {
     function createAndAddListElement(info, container) {
         const listElement = document.createElement('li');
-        listElement.classList.add('infoPage');
+        listElement.classList.add(classes.INFO_PAGE);
         listElement.id = info.name;
     
         container.appendChild(listElement);
@@ -10,7 +12,7 @@ let buildFooter = (function() {
     
     function createAndAddLinkElement(info, container) {
         const linkElement = document.createElement('a');
-        linkElement.classList.add('infoPageLink');
+        linkElement.classList.add(classes.INFO_PAGE_LINK);
         linkElement.href = info.infoLink;
         linkElement.innerText = info.name;
     

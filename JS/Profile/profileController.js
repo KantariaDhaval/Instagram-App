@@ -1,13 +1,19 @@
-import {profileModel} from './../Model/profileModel.js';
-import {profileView} from './../View/profileView.js';
+import {profileModel} from './profileModel.js';
+import {profileView} from './profileView.js';
 
-let profileController = {
-    init: function() {
+const profileController = {
+    init: function(data) {
+        profileModel.setData(data);
         profileView.init();
     },
 
     getData: function() {
         return profileModel.data;
+    },
+
+    setNumberOfPosts: function(numberOfPosts) {
+        profileModel.setNumberOfPosts(numberOfPosts);
+        profileView.updateNumberOfPosts(numberOfPosts);
     },
 
     eventListeners: {

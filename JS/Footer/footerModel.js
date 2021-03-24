@@ -1,4 +1,4 @@
-let footerModel = {
+const footerModel = {
     footerData: {
         listsOfInfo: [
             {

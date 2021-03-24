@@ -36,7 +36,7 @@
                 <button class="pageIcon" id="likePage">
                     <i class="far fa-heart"></i>
                 </button>
-                <button class="pageIcon"            id="profilePage">
+                <button class="pageIcon" id="profilePage">
                     <img src="https://i.pinimg.com/236x/a0/4d/84/a04d849cf591c2f980548b982f461401.jpg" alt="Profile Photo" id="profilePhotoIcon">
                 </button>
             </div>    
@@ -46,79 +46,24 @@
     <div id="profile">
         <div id="profileContainer">
             <!-- Profile data comes from JSON file -->
-            <div id="profilePhoto">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYB1Oq6j2-N9HyYYqtjEbzYsbFmdtBdg-y1g&usqp=CAU" id="profilePhotoImage" alt="Profile Photo">
-            </div>
-            <div id="profileData">
-                <div id="handle">
-                    <div id="handleName">
-                        <h2>Dhaval Kantaria</h2>
-                    </div>
-                    <button class="followBtn" id="followBtn">
-                        Follow
-                    </button>
-                    <button class="messageBtn hidden" id="messageBtn">
-                        Message
-                    </button>
-                    <button class="dropdownBtn" id="dropdownBtn">
-                        <i class="fas fa-caret-down"></i>
-                    </button>
-                </div>
-                <div id="accountDetails">
-                    <p class="accountDetailContainer">
-                        <span class="accountDetail" id="photosNumber">
-                            1
-                        </span>
-                        posts
-                    </p>
-                    <p class="accountDetailContainer">
-                        <span class="accountDetail" id="followers">
-                            5
-                        </span>
-                        followers
-                    </p>
-                    <p class="accountDetailContainer">
-                        <span class="accountDetail" id="following">
-                            5
-                        </span>
-                        following
-                    </p>
-                </div>
-                <div id="otherDetails">
-                    <div id="username">
-                        <h3>Dhaval Kantaria</h3>
-                    </div>
-                    <div id="designation">
-                        Designation 
-                    </div>
-                    <div id="bio">
-                        Bio
-                    </div>
-                    <div id="website">
-                        <a href="https://google.com" id="websiteLink">
-                            Google
-                        </a> 
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
     <div id="menu">
         <div id="menuContainer">
-            <button class="menuPage" id="postsBtn">
+            <button class="menuPage" id="postsBtn" data-btntype="POSTS">
                 <i class="fas fa-th menuIcon"></i>
                 POSTS
             </button>
-            <button class="menuPage" id="igtvBtn">
+            <button class="menuPage" id="igtvBtn" data-btntype="IGTV">
                 <i class="fas fa-tv menuIcon"></i>
                 IGTV
             </button>
-            <button class="menuPage" id="savedBtn">
+            <button class="menuPage" id="savedBtn" data-btntype="SAVED">
                 <i class="far fa-bookmark  menuIcon"></i>
                 SAVED
             </button>
-            <button class="menuPage" id="taggedBtn">
+            <button class="menuPage" id="taggedBtn" data-btntype="TAGGED">
                 <i class="far fa-id-badge  menuIcon"></i>
                 TAGGED
             </button>
